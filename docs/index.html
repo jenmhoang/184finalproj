@@ -1,0 +1,63 @@
+<! DOCTYPE HTML>
+<html>
+  <head>
+    <title>CS 184 Final Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2020</h1>
+    <h1 align="middle">Final Project: asdf</h1>
+    <h3 align="middle">Ethan Buttimer, Jen Hoang, Susan Lin</h2>
+    <p>The goal of our project is to simulate gradient light emission from heated metal objects. 
+      We will model how heat and the resulting glow varies over a surface, with consideration of material attributes.
+    </p>
+    <hr>
+    <h2>Problem Description</h2>
+    <p>From the experiences that we’ve had applying glow attributes to models in 3D programs such as Autodesk Maya 
+      (used with Pixar RenderMan), we’ve found that the results fail to take into consideration material properties 
+      and variations in heat across a surface. Thus, they cannot be used to accurately represent objects that emit heat/energy and glow. 
+    </p>
+    <p>Through this project, we aim to create functionality for a realistic representation of heated objects with 
+      diverse metal material properties. By doing so, we will demonstrate the different ways light emission can be
+      simulated when considering the energy absorbance and reflectance properties of different materials.
+    </p>
+    <hr>
+    <h2>Goals and Deliverables</h2>
+    <p>
+      Through our analysis, we hope to gain understanding of how heat emittance varies between different materials and temperatures.
+    </p>
+    <p>
+      To measure the quality of our system, we will compare our renders to photographs of actually heated objects of different materials. To measure the performance of our system, we will compare the time it takes for a glowing object to light a scene against the time it takes for a typical light source to light a scene.
+    </p>
+    <h3>Plan to Deliver</h3>
+    <p>
+      We plan to deliver several images comparing the heated glows of at least three different metal materials. This can be done by considering the different energy absorbance/reflectance values of various materials that contribute to the resulting heat representation. We also plan on simulating the gradient glow of an object with non-uniform heat distribution (parts of the object are hotter or cooler than other parts). This can be done by interpolating glow gain values over a heat map.
+    </p>
+    <h3>Hope to Deliver</h3>
+    <p>
+      If we have extra time, we would like to consider how we might turn this into a plugin for a current existing 3D modeling or rendering software, such as Autodesk Maya.
+    </p>
+    <p>
+      Additionally, we hope to provide animated simulations of time-varying heat maps as the heat and corresponding glow of an object changes over time.
+    </p>
+    <h3>Interactivity</h3>
+    <p>
+      Our goal is for the program to take JSON files defining material attributes, PNG files acting as UV heat texture maps, and COLLADA (.dae) files defining 3D objects, and output a rendered PNG image. 
+    </p>
+    <hr>
+    <h2>Schedule</h2>
+    <hr>
+    <h2>Resources</h2>
+    <li>Our own computers</li>
+    <li>Hive machines</li>
+    <li>Project 3 codebase and renderer</li>
+    <li>
+      <a href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf">A Physically Plausible Model for
+      Light Emission from Glowing Solid Objects</a>
+    </li>
+    <li>
+      <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.4133&rep=rep1&type=pdf">Visual Simulation of Heat Shimmering and Mirage</a>
+    </li>
+  </body>
+</html>

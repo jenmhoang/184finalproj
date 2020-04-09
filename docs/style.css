@@ -1,0 +1,78 @@
+body {
+  font-family: "DM Sans";
+  font-size: 16px;
+  background-color: white;
+  width: 70%;
+  margin: auto;
+}
+
+img {
+  display: block;
+  width: 200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  color: #2462a8;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+h5 {
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: 400;
+  padding: 10px;
+  background-color: rgba(220, 230, 239, 0.5);
+}
+
+b {
+  color: #2462a8;
+}
+
+a {
+  color: #e46787;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+li {
+  padding-left: 1.28571429em;
+  text-indent: -1.28571429em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  overflow-x: scroll;
+}
+
+.row img {
+  object-fit: contain;
+  margin: 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.column img {
+  width: 100%;
+  height: auto;
+}
