@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdtext.cpp \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/osdtext.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include/GL/glew.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/color.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/CGL.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/misc.h \
+  /usr/local/include/freetype2/ft2build.h \
+  /usr/local/include/freetype2/freetype/config/ftheader.h \
+  /usr/local/include/freetype2/freetype/freetype.h \
+  /usr/local/include/freetype2/freetype/config/ftconfig.h \
+  /usr/local/include/freetype2/freetype/config/ftoption.h \
+  /usr/local/include/freetype2/freetype/config/ftstdlib.h \
+  /usr/local/include/freetype2/freetype/fttypes.h \
+  /usr/local/include/freetype2/freetype/ftsystem.h \
+  /usr/local/include/freetype2/freetype/ftimage.h \
+  /usr/local/include/freetype2/freetype/fterrors.h \
+  /usr/local/include/freetype2/freetype/ftmoderr.h \
+  /usr/local/include/freetype2/freetype/fterrdef.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/base64.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/console.h

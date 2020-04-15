@@ -1,0 +1,1920 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		56C0B54BB2364CE1952BDBAB /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B3182B8FAF954A2C94A5BA01 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				1E0E3A26D41A4869856AA741 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		8EDBFBA004D74FABB91FF9EE /* uninstall */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 41FCAD07F48B4BAD9EEA9E3D /* Build configuration list for PBXAggregateTarget "uninstall" */;
+			buildPhases = (
+				EA1E8A6ABCE34843A6653AF9 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = uninstall;
+			productName = uninstall;
+		};
+		B3DD69AEBC6C4215AD5B085B /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D214581D8F044A10B9CDEE47 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				B91D5076A3E7407DB1D3F868 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				F1EAA2E0667F4E9DA1A93CD5 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		E7B1FEFE47834E30AD4AD53D /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DBB9C577D2DA475D9F6749B7 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				6545F4696EC245DAADD4B3F8 /* CMake Rules */,
+			);
+			dependencies = (
+				ADCFD6F5C4FC4D3ABA5FE36A /* PBXTargetDependency */,
+				557C2584B8E2411BB762FF46 /* PBXTargetDependency */,
+				AE4454D1183F435C9425258B /* PBXTargetDependency */,
+				4C2312095DE34C61BF9748AB /* PBXTargetDependency */,
+				53EA0F11C437487D832C6A6D /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		02418E9F60A2475D9DE7DDEC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/bsdf.h */ = {isa = PBXBuildFile; fileRef = 528D41E02F394ED9B73B3676 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/bsdf.h */; };
+		047029DEBFF5434D9F38CE8E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.cpp */ = {isa = PBXBuildFile; fileRef = 6FAA700864FE464D89816031 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.cpp */; };
+		093FFB38AB9E41FCA454AE95 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.cpp */ = {isa = PBXBuildFile; fileRef = 7D09A15E9BDE4857B01A2397 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.cpp */; };
+		0A6A5DC72644442192374275 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.h */ = {isa = PBXBuildFile; fileRef = 0AC49E1659784F2F93864B7E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.h */; };
+		11CEE65476D94701BC70DC64 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.c */ = {isa = PBXBuildFile; fileRef = B99329F9590540FB84081C42 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		187D5CF243A64A18B5DFA2D6 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.cpp */ = {isa = PBXBuildFile; fileRef = 9C7AA64AB9AB41569620F85F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.cpp */; };
+		1A4BAA04704042839BA35C63 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/monitor.c */ = {isa = PBXBuildFile; fileRef = D57BEC61CABD442BA18ADCA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/monitor.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		1ACA5B9B814F476C819941DF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/color.cpp */ = {isa = PBXBuildFile; fileRef = DEF182BEFEC7437A8319067A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/color.cpp */; };
+		1AEBA75945E14D769091538D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.cpp */ = {isa = PBXBuildFile; fileRef = 0C0ABD40CC1442CFB1E133DB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.cpp */; };
+		1BECE14C157049B08B553E55 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.c */ = {isa = PBXBuildFile; fileRef = 05F6F59B754A425788BB4688 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		1CBED9DAD41D4AEFA0515AB9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/visualinfo.c */ = {isa = PBXBuildFile; fileRef = EC5251651CC44AD4B327D166 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/visualinfo.c */; };
+		1FCBC34A21F84BC69050ACF2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.cpp */ = {isa = PBXBuildFile; fileRef = AA46F17FB79844098E186744 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.cpp */; };
+		24257C06635F4C1797180D24 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.h */ = {isa = PBXBuildFile; fileRef = 0ADC79AFC62B456F9F3E1DA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.h */; };
+		263EC61A901D4D61A15E5DE5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh_view.h */ = {isa = PBXBuildFile; fileRef = 9331705CCD78458BBDFF745D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh_view.h */; };
+		29A6709E27024DA6990E8E25 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector4D.cpp */ = {isa = PBXBuildFile; fileRef = 98961B6FBFC54CE4B6E1F5EA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector4D.cpp */; };
+		2AA1F233D5594D88B36E301D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera.h */ = {isa = PBXBuildFile; fileRef = A96DCB4C63054EA7AA9EA39C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera.h */; };
+		2C64F4B1897B4BFDA85CDF17 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.cpp */ = {isa = PBXBuildFile; fileRef = ABD912E0064E48488AFA9D53 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.cpp */; };
+		3434530EF9774C6790478E2D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/primitive.h */ = {isa = PBXBuildFile; fileRef = E46DCF0BC52F414CAFA352D2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/primitive.h */; };
+		3BC6985B55234DF3BF5F3722 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/path.cpp */ = {isa = PBXBuildFile; fileRef = 1F022DDC249641519D2CB167 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/path.cpp */; };
+		3C950F18311F4260A403B2A9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/lodepng.cpp */ = {isa = PBXBuildFile; fileRef = 9F89D818F8F946F085C2A99D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/lodepng.cpp */; };
+		40C141D92DCC4851B689C303 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdtext.cpp */ = {isa = PBXBuildFile; fileRef = 7AB27833347B4A9397278F42 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdtext.cpp */; };
+		40EC97F59F0D455E84FDE38E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.cpp */ = {isa = PBXBuildFile; fileRef = E1C562E6733E42D9AE770B96 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.cpp */; };
+		414295C82C8D4A74B72E65CE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glewinfo.c */ = {isa = PBXBuildFile; fileRef = 215C7FC800C842AB98339776 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glewinfo.c */; };
+		423F88493A8944029DA73CC5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.cpp */ = {isa = PBXBuildFile; fileRef = 74000F35F62A481FB8A12CAF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.cpp */; };
+		444112E6E86C415E9E5A5B13 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/context.c */ = {isa = PBXBuildFile; fileRef = E0468FDCA3CA4FF0B0E412DE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/context.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		447E2C1A8BB54DD3A636E031 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/ray.h */ = {isa = PBXBuildFile; fileRef = B470C8A59CF64D0180C7A750 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/ray.h */; };
+		489BA1F6B36C453EAC4FCF72 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.h */ = {isa = PBXBuildFile; fileRef = 8A66A47F895740F4BC8239DC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.h */; };
+		4C50ADF3DAB94647BBFFE274 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bvh.h */ = {isa = PBXBuildFile; fileRef = AE755F7BFA184AA5B72BEB94 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bvh.h */; };
+		52B65557C859438CACB5E0D8 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix4x4.cpp */ = {isa = PBXBuildFile; fileRef = C8A3B8F92F28492FA3D9C7EA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix4x4.cpp */; };
+		594A52A2A8B04D12B8270346 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.h */ = {isa = PBXBuildFile; fileRef = 1898C6D88E68420480D79E83 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.h */; };
+		5B49BF84F67746C5938C6770 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.h */ = {isa = PBXBuildFile; fileRef = 7B76D1D971A64DBBA671D72B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.h */; };
+		6087E277807749A5815F518B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera_lens.cpp */ = {isa = PBXBuildFile; fileRef = 8A753BB0CDB9472D9C871082 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera_lens.cpp */; };
+		6244B2F3028F404C80C840F4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/material.h */ = {isa = PBXBuildFile; fileRef = 5FB9E39AB8594100BC0FFE51 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/material.h */; };
+		627828339B144C8DBD3114D7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/renderer.h */ = {isa = PBXBuildFile; fileRef = 11E0F0460F3E4DFC8046C47D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/renderer.h */; };
+		62F663334A5541929B9B6088 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glew.c */ = {isa = PBXBuildFile; fileRef = 69D0885C32BF47949F82C1AB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glew.c */; };
+		63C08B22F47A4983B8835620 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/complex.cpp */ = {isa = PBXBuildFile; fileRef = 984CB868281E4DCAB389041B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/complex.cpp */; };
+		6450691026434831A8E83692 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.h */ = {isa = PBXBuildFile; fileRef = C091AF6406A14DE2A38FD198 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.h */; };
+		6592063B2F534926AC92E2EE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_monitor.m */ = {isa = PBXBuildFile; fileRef = 92C35B653E734452B603C709 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_monitor.m */; };
+		65E02A375B0449438B781D6B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.h */ = {isa = PBXBuildFile; fileRef = F4D74D977842433EA4B97C88 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.h */; };
+		66ED4C058CB9434BB3DC30F1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/mappings.h */ = {isa = PBXBuildFile; fileRef = 1C9755CC7F42469B8F34AC3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/mappings.h */; };
+		66F0429E1FA94A40864481A4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.c */ = {isa = PBXBuildFile; fileRef = 956FAC13988C49589CF217AA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.c */; };
+		677F1CA6439F446195D05A45 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/spot_light.h */ = {isa = PBXBuildFile; fileRef = 4AD36D880D3A4EA5AD0DF860 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/spot_light.h */; };
+		67A27C311E614F738D90079D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/spectrum.cpp */ = {isa = PBXBuildFile; fileRef = 8F79A45897E24D09B29C80B1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/spectrum.cpp */; };
+		68AB399EA2D244CEA262888A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/light.h */ = {isa = PBXBuildFile; fileRef = D7F0D8F73DAF4BA7882E73A4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/light.h */; };
+		691FC06184ED4B9F8CB520F3 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/image.h */ = {isa = PBXBuildFile; fileRef = 0BC60DF8070646F9A4A95F01 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/image.h */; };
+		6AB5ED9F0C3849C7BC87AA92 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/ambient_light.h */ = {isa = PBXBuildFile; fileRef = DA0D572B8ECE43C8B88B5405 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/ambient_light.h */; };
+		716AC30775314AD2AF3BB7FF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3native.h */ = {isa = PBXBuildFile; fileRef = CCE5DC6ABF5E4AAB83607F0C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3native.h */; };
+		716E7AB5311E498E850DB38F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.h */ = {isa = PBXBuildFile; fileRef = ACEAE82BE67E4C7687B3D713 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.h */; };
+		727F812EDBEF4F6D8F4195EC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix3x3.cpp */ = {isa = PBXBuildFile; fileRef = E02892644BA743FC978DC9E7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix3x3.cpp */; };
+		730BCAD90FA34184B60C0A0C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.h */ = {isa = PBXBuildFile; fileRef = D91CCA2B8D474FA6A67CF530 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.h */; };
+		7537AA72411648FE8F22CE55 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/tinyxml2.cpp */ = {isa = PBXBuildFile; fileRef = EC63DA888C6347ECB2D08208 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/tinyxml2.cpp */; };
+		7694957D675E44D1A5D5910E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.cpp */ = {isa = PBXBuildFile; fileRef = 2697B702DCB54A4C98528A5F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.cpp */; };
+		76973BC0287E4B749B91A004 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.h */ = {isa = PBXBuildFile; fileRef = 94CFF75AFC754AD8834D1F79 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.h */; };
+		78F72A612D8948F39EADB43A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.cpp */ = {isa = PBXBuildFile; fileRef = C74E99E3700148FB8CEF784D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.cpp */; };
+		79FBD6C1E73241E2B5FF2676 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/directional_light.h */ = {isa = PBXBuildFile; fileRef = C265FBFCEE46419FA8D50F63 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/directional_light.h */; };
+		7B169CFD656246199700C4C7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/scene.h */ = {isa = PBXBuildFile; fileRef = AD0C4102FA5D413FA9FF032F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/scene.h */; };
+		7B8DEA55EF6B45ED94B8E13F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.cpp */ = {isa = PBXBuildFile; fileRef = E553DC695F4C4D6A86B7E8F3 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.cpp */; };
+		7BC8273E83E344678B4D9277 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_window.m */ = {isa = PBXBuildFile; fileRef = EE53DCC02FBE4F2789047E02 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_window.m */; };
+		7ECFDD912E7745FF886F96F0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.cpp */ = {isa = PBXBuildFile; fileRef = 23A70438D8244594B231CD77 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.cpp */; };
+		80A9D926EA024AD0B3C9552E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/triangle.h */ = {isa = PBXBuildFile; fileRef = F99D928DBBBE436A8FA03C59 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/triangle.h */; };
+		8178EB6A8935441A8D347CA8 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.cpp */ = {isa = PBXBuildFile; fileRef = 3441CC84B91547569D454E92 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.cpp */; };
+		8389689ECCF740A2BAE4B65E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.cpp */ = {isa = PBXBuildFile; fileRef = 00760DAE8DF1493CB617E8E0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.cpp */; };
+		8926C6D210DB4B259E9DF89D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.h */ = {isa = PBXBuildFile; fileRef = 8EC2ED2F17414A028804CB17 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.h */; };
+		8E1481266F9A4A9990D0C4E9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/environment_light.h */ = {isa = PBXBuildFile; fileRef = 71565824FA394C3997C81D46 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/environment_light.h */; };
+		8FDB7B035A164AA58CA264EF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.m */ = {isa = PBXBuildFile; fileRef = 56B6A93662854B218CACECBB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.m */; };
+		91DCE2B6B226405999B9E8A5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.h */ = {isa = PBXBuildFile; fileRef = 755C68455C984601BF6CA92C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.h */; };
+		9816B132D0DE4EC1BC80224A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.m */ = {isa = PBXBuildFile; fileRef = 1C02CC04CBB745C19025DC61 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.m */; };
+		9928515675D64AC3944181CD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3.h */ = {isa = PBXBuildFile; fileRef = 8F6D648C32A241CDAE00D581 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3.h */; };
+		9B8207BFDC494D4FA5CE531B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/sphere.h */ = {isa = PBXBuildFile; fileRef = 5208ED3F7428437DBD48BA02 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/sphere.h */; };
+		9D7666EA9ECB49B8A43ABD80 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.h */ = {isa = PBXBuildFile; fileRef = CA86B007A50D43CBA96CAD19 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.h */; };
+		9DD2067F8BFB4E919E44C73D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.cpp */ = {isa = PBXBuildFile; fileRef = 09DC69C858544915A8AB8E07 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.cpp */; };
+		9ECCC6651A6B43C4B12443BF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5E027F0CC631487EA2499FA9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/CMakeLists.txt */; };
+		9FBF2CBE25DE4CC48F7F0718 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada_info.h */ = {isa = PBXBuildFile; fileRef = 8EC1990E904B4E7BA3FF4049 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada_info.h */; };
+		A2FC51F490DD4C778A514F9E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.cpp */ = {isa = PBXBuildFile; fileRef = 402E7710A9F84C61A90B6B52 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.cpp */; };
+		A691258B978141B59835BF6D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/viewer.cpp */ = {isa = PBXBuildFile; fileRef = B9B9DA94338C405CB39A3AB5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/viewer.cpp */; };
+		A8E8AE9C1F624205A35C5B62 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.h */ = {isa = PBXBuildFile; fileRef = 07E5321413D74BF2A434F82B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.h */; };
+		A919BAC268524369B0BC12F9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.h */ = {isa = PBXBuildFile; fileRef = FA48622C03244BBFBB5E2F3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.h */; };
+		AC66617A8D6A46C194344093 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/work_queue.h */ = {isa = PBXBuildFile; fileRef = 937EE425AA2B4E2B8F152435 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/work_queue.h */; };
+		B09C103323354F1D8D768486 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_time.c */ = {isa = PBXBuildFile; fileRef = AF01D54AF6F843A59CE4B847 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_time.c */; };
+		B244DB96C9994F91B90462E7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/input.c */ = {isa = PBXBuildFile; fileRef = DCC7175E624847719C1388AC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/input.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		B8642F5DE5174896B884AFB6 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/point_light.h */ = {isa = PBXBuildFile; fileRef = 3C8C11861257449681375355 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/point_light.h */; };
+		B8A93862278E4F03859FE60C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = E60FF592759A45FB8B5778DD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CMakeLists.txt */; };
+		BD9D376293BB4F87A14F8E98 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.h */ = {isa = PBXBuildFile; fileRef = 8696360A9FB04CD9AA65B559 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.h */; };
+		C0314EBE72C04BF29C482883 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/glfw_config.h */ = {isa = PBXBuildFile; fileRef = 44812E6A0BC442B8A276AA20 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/glfw_config.h */; };
+		C1CA9E2DD601430B965D6E32 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.h */ = {isa = PBXBuildFile; fileRef = 4818E362436944388B65A76E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.h */; };
+		C2BEBAA6BA2E4AC3931EAF79 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/main.cpp */ = {isa = PBXBuildFile; fileRef = 03E4443987104B2B8BC74D13 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/main.cpp */; };
+		C37CC79FCB3A41D59126E2BD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/advanced_bsdf.cpp */ = {isa = PBXBuildFile; fileRef = EED9090AC7474DF6A187B934 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/advanced_bsdf.cpp */; };
+		C4E0347364FB456BA08F2476 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector3D.cpp */ = {isa = PBXBuildFile; fileRef = 71FCB467724B435FB15ADAA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector3D.cpp */; };
+		C62507A5226E47C68221EC89 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/intersection.h */ = {isa = PBXBuildFile; fileRef = 68D4F76887114C8EB5718C23 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/intersection.h */; };
+		C9D76D091E9E4A84B303AB16 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/random_util.h */ = {isa = PBXBuildFile; fileRef = FA3711F1509548E193A15897 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/random_util.h */; };
+		CAFEB533730E48F9B9A24078 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/vulkan.c */ = {isa = PBXBuildFile; fileRef = A9F66C77D02B441880A2E016 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/vulkan.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		CDAEDA14F77E4B43866CAABF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.cpp */ = {isa = PBXBuildFile; fileRef = D2D86AC920BF4AB0B0473661 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.cpp */; };
+		CE60510F831E4E779B0E6BB7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/area_light.h */ = {isa = PBXBuildFile; fileRef = 2DC749171DED4AB1ADB15D44 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/area_light.h */; };
+		D1A931FC69BA4290B74AAA83 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.cpp */ = {isa = PBXBuildFile; fileRef = B1566C6C1CAB43E897F77284 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.cpp */; };
+		D2EEDBC0628C4BF68810F488 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/draw_style.h */ = {isa = PBXBuildFile; fileRef = 2A88953983F34B3DBD6588D4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/draw_style.h */; };
+		D8406522EA82497DA2351CC8 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bbox.h */ = {isa = PBXBuildFile; fileRef = 8E002044D6D340CB861206A2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bbox.h */; };
+		DA93C2A68A864D7F9D08C2DF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.h */ = {isa = PBXBuildFile; fileRef = 6B7257ED060947188C5A44D1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.h */; };
+		DF9FB9E801044D99ACA82ACD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/window.c */ = {isa = PBXBuildFile; fileRef = D4891F8F50C247C18F5FF113 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/window.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		DFDE84131410412DAEAFCC86 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdfont.cpp */ = {isa = PBXBuildFile; fileRef = 74DBB3D3DC524666A990BCDC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdfont.cpp */; };
+		E5CD8E5C60594814A2687E3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.h */ = {isa = PBXBuildFile; fileRef = 13E7FF9727E54B628DF72F2C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.h */; };
+		E697C5658BCD44958C4DB80E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/init.c */ = {isa = PBXBuildFile; fileRef = 33F5C5D203BF4649AA896C2C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/init.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		E7185A2D110D46AEB88951B5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/internal.h */ = {isa = PBXBuildFile; fileRef = 019C8898522F4EE1A0D623D0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/internal.h */; };
+		E766D47547864F309B97F4C7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.h */ = {isa = PBXBuildFile; fileRef = 0F49C210326D4FD58587F359 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.h */; };
+		E897ADDA7FEA4359B13AA199 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/base64.cpp */ = {isa = PBXBuildFile; fileRef = 989830BB80F449BE99B005F4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/base64.cpp */; };
+		EBEF92B88DAA4533AFB7F838 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.h */ = {isa = PBXBuildFile; fileRef = 899F607CB9B54D6DA0FAB5E4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.h */; };
+		F1132A6D4F544A15876B306C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.h */ = {isa = PBXBuildFile; fileRef = 8396A7785ABD43AC9DB0D76D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.h */; };
+		F2FC62CD63634B4FB1809A65 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/aggregate.h */ = {isa = PBXBuildFile; fileRef = 3F0F926551EE49C8BB9FB829 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/aggregate.h */; };
+		F38871A1568C4BEFAFECF8A0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/pathtracer.h */ = {isa = PBXBuildFile; fileRef = 5988656B643F4B16ABE8C349 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/pathtracer.h */; };
+		F43AD723786342F0BACE6C9C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_platform.h */ = {isa = PBXBuildFile; fileRef = E590BE0015DC480AA0381166 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_platform.h */; };
+		F5838DE74B6C4F3B8D14378C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_init.m */ = {isa = PBXBuildFile; fileRef = 59DFA18519704043B8E51750 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_init.m */; };
+		F6156EDB01F349078D220506 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector2D.cpp */ = {isa = PBXBuildFile; fileRef = B5206B6484B24AB48C8AE956 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector2D.cpp */; };
+		F6A7BA1CD2F144A2923D84DE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/mutablePriorityQueue.h */ = {isa = PBXBuildFile; fileRef = 5F337899ADB14518A2014700 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/mutablePriorityQueue.h */; };
+		F83CAAB8C9CA4551871E69DC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = E281295E4D304653B9DFCB05 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/CMakeLists.txt */; };
+		FC3F108D22254819A9884CF6 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.h */ = {isa = PBXBuildFile; fileRef = 290E8EF5F36B46CBAB1ABABF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.h */; };
+		FDA25CA01E024E8FB9FD7094 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/quaternion.cpp */ = {isa = PBXBuildFile; fileRef = 01DDDEC672794CC8B5976684 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/quaternion.cpp */; };
+		FE0E861FF2BC42D6B1C0E08F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C96A0059DBB4484EB006EFBA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/CMakeLists.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		6BF3E3F54A2E4789AD5BBF1C /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		6F6A11A2F1C34E10AF2DD652 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		89DB989EBB5F440BBC054C9A /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		ECE01B9514D8404CBE38EE59 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		084796AEE4404E4399EFC5E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 771B800CFBEC4CE5A6179C28;
+			remoteInfo = CGL;
+		};
+		0C89397C3461474F9DCE742A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56C0B54BB2364CE1952BDBAB;
+			remoteInfo = ZERO_CHECK;
+		};
+		29F4852431FC4CCCBE6B64F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 771B800CFBEC4CE5A6179C28;
+			remoteInfo = CGL;
+		};
+		42736E0BD35C4166BC604186 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A97948CE15F24CAE85E12007;
+			remoteInfo = glew;
+		};
+		72215A8AC6404ADEB387C473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A97948CE15F24CAE85E12007;
+			remoteInfo = glew;
+		};
+		7E0F8458360548188DF082EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED63ED8D40A74560BD09892E;
+			remoteInfo = glfw;
+		};
+		91E439B7BB014A3DA49CFF01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED63ED8D40A74560BD09892E;
+			remoteInfo = glfw;
+		};
+		BE5F81C71C5E4EF6AE20BFEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7B1FEFE47834E30AD4AD53D;
+			remoteInfo = ALL_BUILD;
+		};
+		D3622CAF6FB14569B80EEEB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED63ED8D40A74560BD09892E;
+			remoteInfo = glfw;
+		};
+		DB9222DCC3DC4981A3C715F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A97948CE15F24CAE85E12007;
+			remoteInfo = glew;
+		};
+		E4BFAB9D0A464C2E9506568D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D980F82F264AC486691E44;
+			remoteInfo = pathtracer;
+		};
+		E7D2B37595CD4383B1CBFADB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56C0B54BB2364CE1952BDBAB;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00760DAE8DF1493CB617E8E0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = application.cpp; path = src/application/application.cpp; sourceTree = SOURCE_ROOT; };
+		019C8898522F4EE1A0D623D0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = internal.h; path = CGL/deps/glfw/src/internal.h; sourceTree = SOURCE_ROOT; };
+		01DDDEC672794CC8B5976684 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/quaternion.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = quaternion.cpp; path = CGL/src/quaternion.cpp; sourceTree = SOURCE_ROOT; };
+		03E4443987104B2B8BC74D13 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/application/main.cpp; sourceTree = SOURCE_ROOT; };
+		05F6F59B754A425788BB4688 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = egl_context.c; path = CGL/deps/glfw/src/egl_context.c; sourceTree = SOURCE_ROOT; };
+		07E5321413D74BF2A434F82B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = scene.h; path = src/scene/gl_scene/scene.h; sourceTree = SOURCE_ROOT; };
+		09DC69C858544915A8AB8E07 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lodepng.cpp; path = src/util/lodepng.cpp; sourceTree = SOURCE_ROOT; };
+		0AC49E1659784F2F93864B7E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = posix_thread.h; path = CGL/deps/glfw/src/posix_thread.h; sourceTree = SOURCE_ROOT; };
+		0ADC79AFC62B456F9F3E1DA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = osmesa_context.h; path = CGL/deps/glfw/src/osmesa_context.h; sourceTree = SOURCE_ROOT; };
+		0BC60DF8070646F9A4A95F01 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = image.h; path = src/util/image.h; sourceTree = SOURCE_ROOT; };
+		0C0ABD40CC1442CFB1E133DB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sphere_drawing.cpp; path = src/util/sphere_drawing.cpp; sourceTree = SOURCE_ROOT; };
+		0F49C210326D4FD58587F359 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = collada.h; path = src/scene/collada/collada.h; sourceTree = SOURCE_ROOT; };
+		11E0F0460F3E4DFC8046C47D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = renderer.h; path = src/application/renderer.h; sourceTree = SOURCE_ROOT; };
+		13E7FF9727E54B628DF72F2C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sphere_info.h; path = src/scene/collada/sphere_info.h; sourceTree = SOURCE_ROOT; };
+		1898C6D88E68420480D79E83 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = egl_context.h; path = CGL/deps/glfw/src/egl_context.h; sourceTree = SOURCE_ROOT; };
+		1C02CC04CBB745C19025DC61 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = nsgl_context.m; path = CGL/deps/glfw/src/nsgl_context.m; sourceTree = SOURCE_ROOT; };
+		1C9755CC7F42469B8F34AC3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/mappings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = mappings.h; path = CGL/deps/glfw/src/mappings.h; sourceTree = SOURCE_ROOT; };
+		1F022DDC249641519D2CB167 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/path.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = path.cpp; path = CGL/src/path.cpp; sourceTree = SOURCE_ROOT; };
+		215C7FC800C842AB98339776 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glewinfo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glewinfo.c; path = CGL/deps/glew/src/glewinfo.c; sourceTree = SOURCE_ROOT; };
+		23A70438D8244594B231CD77 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sphere_info.cpp; path = src/scene/collada/sphere_info.cpp; sourceTree = SOURCE_ROOT; };
+		2697B702DCB54A4C98528A5F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = meshEdit.cpp; path = src/application/meshEdit.cpp; sourceTree = SOURCE_ROOT; };
+		290E8EF5F36B46CBAB1ABABF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = light_info.h; path = src/scene/collada/light_info.h; sourceTree = SOURCE_ROOT; };
+		2A88953983F34B3DBD6588D4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/draw_style.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = draw_style.h; path = src/scene/gl_scene/draw_style.h; sourceTree = SOURCE_ROOT; };
+		2DC749171DED4AB1ADB15D44 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/area_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = area_light.h; path = src/scene/gl_scene/area_light.h; sourceTree = SOURCE_ROOT; };
+		33F5C5D203BF4649AA896C2C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = CGL/deps/glfw/src/init.c; sourceTree = SOURCE_ROOT; };
+		3441CC84B91547569D454E92 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = raytraced_renderer.cpp; path = src/pathtracer/raytraced_renderer.cpp; sourceTree = SOURCE_ROOT; };
+		3C8C11861257449681375355 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/point_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = point_light.h; path = src/scene/gl_scene/point_light.h; sourceTree = SOURCE_ROOT; };
+		3DA00DCC2BE04943A8D4BEBE /* glew */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglew.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0F926551EE49C8BB9FB829 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/aggregate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = aggregate.h; path = src/scene/aggregate.h; sourceTree = SOURCE_ROOT; };
+		402E7710A9F84C61A90B6B52 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sphere.cpp; path = src/scene/gl_scene/sphere.cpp; sourceTree = SOURCE_ROOT; };
+		44812E6A0BC442B8A276AA20 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/glfw_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw_config.h; path = xcode/CGL/deps/glfw/src/glfw_config.h; sourceTree = SOURCE_ROOT; };
+		4818E362436944388B65A76E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = material_info.h; path = src/scene/collada/material_info.h; sourceTree = SOURCE_ROOT; };
+		4AD36D880D3A4EA5AD0DF860 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/spot_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = spot_light.h; path = src/scene/gl_scene/spot_light.h; sourceTree = SOURCE_ROOT; };
+		5208ED3F7428437DBD48BA02 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/sphere.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sphere.h; path = src/scene/sphere.h; sourceTree = SOURCE_ROOT; };
+		528D41E02F394ED9B73B3676 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/bsdf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = bsdf.h; path = src/pathtracer/bsdf.h; sourceTree = SOURCE_ROOT; };
+		56B6A93662854B218CACECBB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_joystick.m; path = CGL/deps/glfw/src/cocoa_joystick.m; sourceTree = SOURCE_ROOT; };
+		5988656B643F4B16ABE8C349 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/pathtracer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = pathtracer.h; path = src/pathtracer/pathtracer.h; sourceTree = SOURCE_ROOT; };
+		59DFA18519704043B8E51750 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_init.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_init.m; path = CGL/deps/glfw/src/cocoa_init.m; sourceTree = SOURCE_ROOT; };
+		5E027F0CC631487EA2499FA9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CGL/deps/glfw/src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5F337899ADB14518A2014700 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/mutablePriorityQueue.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = mutablePriorityQueue.h; path = src/util/mutablePriorityQueue.h; sourceTree = SOURCE_ROOT; };
+		5FB9E39AB8594100BC0FFE51 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/material.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = material.h; path = src/scene/gl_scene/material.h; sourceTree = SOURCE_ROOT; };
+		68D4F76887114C8EB5718C23 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/intersection.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = intersection.h; path = src/pathtracer/intersection.h; sourceTree = SOURCE_ROOT; };
+		69D0885C32BF47949F82C1AB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = CGL/deps/glew/src/glew.c; sourceTree = SOURCE_ROOT; };
+		6B7257ED060947188C5A44D1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nsgl_context.h; path = CGL/deps/glfw/src/nsgl_context.h; sourceTree = SOURCE_ROOT; };
+		6FAA700864FE464D89816031 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = environment_light.cpp; path = src/scene/environment_light.cpp; sourceTree = SOURCE_ROOT; };
+		71565824FA394C3997C81D46 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/environment_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = environment_light.h; path = src/scene/gl_scene/environment_light.h; sourceTree = SOURCE_ROOT; };
+		71FCB467724B435FB15ADAA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector3D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = vector3D.cpp; path = CGL/src/vector3D.cpp; sourceTree = SOURCE_ROOT; };
+		74000F35F62A481FB8A12CAF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = object.cpp; path = src/scene/object.cpp; sourceTree = SOURCE_ROOT; };
+		74DBB3D3DC524666A990BCDC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdfont.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = osdfont.cpp; path = CGL/src/osdfont.cpp; sourceTree = SOURCE_ROOT; };
+		755C68455C984601BF6CA92C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = halfEdgeMesh.h; path = src/util/halfEdgeMesh.h; sourceTree = SOURCE_ROOT; };
+		7AB27833347B4A9397278F42 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdtext.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = osdtext.cpp; path = CGL/src/osdtext.cpp; sourceTree = SOURCE_ROOT; };
+		7B76D1D971A64DBBA671D72B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sphere_drawing.h; path = src/util/sphere_drawing.h; sourceTree = SOURCE_ROOT; };
+		7D09A15E9BDE4857B01A2397 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = collada.cpp; path = src/scene/collada/collada.cpp; sourceTree = SOURCE_ROOT; };
+		8396A7785ABD43AC9DB0D76D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_joystick.h; path = CGL/deps/glfw/src/cocoa_joystick.h; sourceTree = SOURCE_ROOT; };
+		8696360A9FB04CD9AA65B559 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = object.h; path = src/scene/object.h; sourceTree = SOURCE_ROOT; };
+		88999CED98C943E78D66350A /* glfw */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglfw3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		899F607CB9B54D6DA0FAB5E4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = polymesh_info.h; path = src/scene/collada/polymesh_info.h; sourceTree = SOURCE_ROOT; };
+		8A66A47F895740F4BC8239DC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = mesh.h; path = src/scene/gl_scene/mesh.h; sourceTree = SOURCE_ROOT; };
+		8A753BB0CDB9472D9C871082 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera_lens.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = camera_lens.cpp; path = src/pathtracer/camera_lens.cpp; sourceTree = SOURCE_ROOT; };
+		8E002044D6D340CB861206A2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bbox.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = bbox.h; path = src/scene/bbox.h; sourceTree = SOURCE_ROOT; };
+		8EC1990E904B4E7BA3FF4049 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada_info.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = collada_info.h; path = src/scene/collada/collada_info.h; sourceTree = SOURCE_ROOT; };
+		8EC2ED2F17414A028804CB17 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sampler.h; path = src/pathtracer/sampler.h; sourceTree = SOURCE_ROOT; };
+		8F6D648C32A241CDAE00D581 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3.h; path = CGL/deps/glfw/include/GLFW/glfw3.h; sourceTree = SOURCE_ROOT; };
+		8F79A45897E24D09B29C80B1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/spectrum.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = spectrum.cpp; path = CGL/src/spectrum.cpp; sourceTree = SOURCE_ROOT; };
+		92C35B653E734452B603C709 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_monitor.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_monitor.m; path = CGL/deps/glfw/src/cocoa_monitor.m; sourceTree = SOURCE_ROOT; };
+		9331705CCD78458BBDFF745D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh_view.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = mesh_view.h; path = src/scene/gl_scene/mesh_view.h; sourceTree = SOURCE_ROOT; };
+		937EE425AA2B4E2B8F152435 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/work_queue.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = work_queue.h; path = src/util/work_queue.h; sourceTree = SOURCE_ROOT; };
+		94CFF75AFC754AD8834D1F79 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sphere.h; path = src/scene/gl_scene/sphere.h; sourceTree = SOURCE_ROOT; };
+		956FAC13988C49589CF217AA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = posix_thread.c; path = CGL/deps/glfw/src/posix_thread.c; sourceTree = SOURCE_ROOT; };
+		984CB868281E4DCAB389041B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = CGL/src/complex.cpp; sourceTree = SOURCE_ROOT; };
+		98961B6FBFC54CE4B6E1F5EA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector4D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = vector4D.cpp; path = CGL/src/vector4D.cpp; sourceTree = SOURCE_ROOT; };
+		989830BB80F449BE99B005F4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/base64.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = base64.cpp; path = CGL/src/base64.cpp; sourceTree = SOURCE_ROOT; };
+		9C7AA64AB9AB41569620F85F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = camera_info.cpp; path = src/scene/collada/camera_info.cpp; sourceTree = SOURCE_ROOT; };
+		9F89D818F8F946F085C2A99D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/lodepng.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lodepng.cpp; path = CGL/src/lodepng.cpp; sourceTree = SOURCE_ROOT; };
+		A96DCB4C63054EA7AA9EA39C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = camera.h; path = src/pathtracer/camera.h; sourceTree = SOURCE_ROOT; };
+		A9F66C77D02B441880A2E016 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/vulkan.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = vulkan.c; path = CGL/deps/glfw/src/vulkan.c; sourceTree = SOURCE_ROOT; };
+		AA46F17FB79844098E186744 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = halfEdgeMesh.cpp; path = src/util/halfEdgeMesh.cpp; sourceTree = SOURCE_ROOT; };
+		ABD912E0064E48488AFA9D53 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = scene.cpp; path = src/scene/gl_scene/scene.cpp; sourceTree = SOURCE_ROOT; };
+		ACEAE82BE67E4C7687B3D713 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = application.h; path = src/application/application.h; sourceTree = SOURCE_ROOT; };
+		AD0C4102FA5D413FA9FF032F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = scene.h; path = src/scene/scene.h; sourceTree = SOURCE_ROOT; };
+		AE755F7BFA184AA5B72BEB94 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bvh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = bvh.h; path = src/scene/bvh.h; sourceTree = SOURCE_ROOT; };
+		AF01D54AF6F843A59CE4B847 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_time.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = cocoa_time.c; path = CGL/deps/glfw/src/cocoa_time.c; sourceTree = SOURCE_ROOT; };
+		B1566C6C1CAB43E897F77284 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = mesh.cpp; path = src/scene/gl_scene/mesh.cpp; sourceTree = SOURCE_ROOT; };
+		B28DDB59B3D441468E5A5F9F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CGL/deps/glfw/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B470C8A59CF64D0180C7A750 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/ray.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ray.h; path = src/pathtracer/ray.h; sourceTree = SOURCE_ROOT; };
+		B5206B6484B24AB48C8AE956 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = vector2D.cpp; path = CGL/src/vector2D.cpp; sourceTree = SOURCE_ROOT; };
+		B99329F9590540FB84081C42 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = osmesa_context.c; path = CGL/deps/glfw/src/osmesa_context.c; sourceTree = SOURCE_ROOT; };
+		B9B9DA94338C405CB39A3AB5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/viewer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = viewer.cpp; path = CGL/src/viewer.cpp; sourceTree = SOURCE_ROOT; };
+		C091AF6406A14DE2A38FD198 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = lodepng.h; path = src/util/lodepng.h; sourceTree = SOURCE_ROOT; };
+		C265FBFCEE46419FA8D50F63 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/directional_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = directional_light.h; path = src/scene/gl_scene/directional_light.h; sourceTree = SOURCE_ROOT; };
+		C74E99E3700148FB8CEF784D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = polymesh_info.cpp; path = src/scene/collada/polymesh_info.cpp; sourceTree = SOURCE_ROOT; };
+		C8A3B8F92F28492FA3D9C7EA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix4x4.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix4x4.cpp; path = CGL/src/matrix4x4.cpp; sourceTree = SOURCE_ROOT; };
+		C96A0059DBB4484EB006EFBA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CGL/deps/glew/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		CA86B007A50D43CBA96CAD19 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = environment_light.h; path = src/scene/environment_light.h; sourceTree = SOURCE_ROOT; };
+		CAC2F0A56FD54E498C6A6758 /* CGL */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE5DC6ABF5E4AAB83607F0C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3native.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3native.h; path = CGL/deps/glfw/include/GLFW/glfw3native.h; sourceTree = SOURCE_ROOT; };
+		D2D86AC920BF4AB0B0473661 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sampler.cpp; path = src/pathtracer/sampler.cpp; sourceTree = SOURCE_ROOT; };
+		D4891F8F50C247C18F5FF113 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/window.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = window.c; path = CGL/deps/glfw/src/window.c; sourceTree = SOURCE_ROOT; };
+		D57BEC61CABD442BA18ADCA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/monitor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = monitor.c; path = CGL/deps/glfw/src/monitor.c; sourceTree = SOURCE_ROOT; };
+		D7F0D8F73DAF4BA7882E73A4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = light.h; path = src/scene/light.h; sourceTree = SOURCE_ROOT; };
+		D91CCA2B8D474FA6A67CF530 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = camera_info.h; path = src/scene/collada/camera_info.h; sourceTree = SOURCE_ROOT; };
+		DA0D572B8ECE43C8B88B5405 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/ambient_light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ambient_light.h; path = src/scene/gl_scene/ambient_light.h; sourceTree = SOURCE_ROOT; };
+		DCC7175E624847719C1388AC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = CGL/deps/glfw/src/input.c; sourceTree = SOURCE_ROOT; };
+		DCFD7144173E43D3B7B30942 /* pathtracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = pathtracer; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF182BEFEC7437A8319067A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/color.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = color.cpp; path = CGL/src/color.cpp; sourceTree = SOURCE_ROOT; };
+		E02892644BA743FC978DC9E7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix3x3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix3x3.cpp; path = CGL/src/matrix3x3.cpp; sourceTree = SOURCE_ROOT; };
+		E0468FDCA3CA4FF0B0E412DE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = context.c; path = CGL/deps/glfw/src/context.c; sourceTree = SOURCE_ROOT; };
+		E1C562E6733E42D9AE770B96 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = material_info.cpp; path = src/scene/collada/material_info.cpp; sourceTree = SOURCE_ROOT; };
+		E281295E4D304653B9DFCB05 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CGL/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E46DCF0BC52F414CAFA352D2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/primitive.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = primitive.h; path = src/scene/primitive.h; sourceTree = SOURCE_ROOT; };
+		E553DC695F4C4D6A86B7E8F3 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = light_info.cpp; path = src/scene/collada/light_info.cpp; sourceTree = SOURCE_ROOT; };
+		E590BE0015DC480AA0381166 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_platform.h; path = CGL/deps/glfw/src/cocoa_platform.h; sourceTree = SOURCE_ROOT; };
+		E60FF592759A45FB8B5778DD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		EC5251651CC44AD4B327D166 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/visualinfo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = visualinfo.c; path = CGL/deps/glew/src/visualinfo.c; sourceTree = SOURCE_ROOT; };
+		EC63DA888C6347ECB2D08208 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/tinyxml2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = tinyxml2.cpp; path = CGL/src/tinyxml2.cpp; sourceTree = SOURCE_ROOT; };
+		ED41641F494B45BA99E73F0D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		EE53DCC02FBE4F2789047E02 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_window.m; path = CGL/deps/glfw/src/cocoa_window.m; sourceTree = SOURCE_ROOT; };
+		EED9090AC7474DF6A187B934 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/advanced_bsdf.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = advanced_bsdf.cpp; path = src/pathtracer/advanced_bsdf.cpp; sourceTree = SOURCE_ROOT; };
+		F4D74D977842433EA4B97C88 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = raytraced_renderer.h; path = src/pathtracer/raytraced_renderer.h; sourceTree = SOURCE_ROOT; };
+		F99D928DBBBE436A8FA03C59 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/triangle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = triangle.h; path = src/scene/triangle.h; sourceTree = SOURCE_ROOT; };
+		FA3711F1509548E193A15897 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/random_util.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = random_util.h; path = src/util/random_util.h; sourceTree = SOURCE_ROOT; };
+		FA48622C03244BBFBB5E2F3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = meshEdit.h; path = src/application/meshEdit.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		087D61A01741406EAF730411 /* uninstall */ = {
+			isa = PBXGroup;
+			children = (
+				117B8466413F44CD8160C605 /* CMake Rules */,
+				B28DDB59B3D441468E5A5F9F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/CMakeLists.txt */,
+			);
+			name = uninstall;
+			sourceTree = "<group>";
+		};
+		117B8466413F44CD8160C605 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		18FCD5FA71A74CF8806B6E09 = {
+			isa = PBXGroup;
+			children = (
+				93DA41DFD6844C2CB1220182 /* pathtracer */,
+				325A9268B1F544DF81503640 /* ALL_BUILD */,
+				579C741E50D149ECAA8D92EF /* CGL */,
+				4410352995F94C55AFE7EE1A /* glew */,
+				C47B937A802B4737AA4E7E7D /* GLFW3 */,
+				7E78E53A360940D192057D9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28E3143CD96542E0B41BF176 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				00760DAE8DF1493CB617E8E0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.cpp */,
+				03E4443987104B2B8BC74D13 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/main.cpp */,
+				2697B702DCB54A4C98528A5F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.cpp */,
+				EED9090AC7474DF6A187B934 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/advanced_bsdf.cpp */,
+				8A753BB0CDB9472D9C871082 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera_lens.cpp */,
+				3441CC84B91547569D454E92 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.cpp */,
+				D2D86AC920BF4AB0B0473661 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.cpp */,
+				9C7AA64AB9AB41569620F85F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.cpp */,
+				7D09A15E9BDE4857B01A2397 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.cpp */,
+				E553DC695F4C4D6A86B7E8F3 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.cpp */,
+				E1C562E6733E42D9AE770B96 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.cpp */,
+				C74E99E3700148FB8CEF784D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.cpp */,
+				23A70438D8244594B231CD77 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.cpp */,
+				6FAA700864FE464D89816031 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.cpp */,
+				B1566C6C1CAB43E897F77284 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.cpp */,
+				ABD912E0064E48488AFA9D53 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.cpp */,
+				402E7710A9F84C61A90B6B52 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.cpp */,
+				74000F35F62A481FB8A12CAF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.cpp */,
+				AA46F17FB79844098E186744 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.cpp */,
+				09DC69C858544915A8AB8E07 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.cpp */,
+				0C0ABD40CC1442CFB1E133DB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2D0170460ECA415981CFE0EF /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				59DFA18519704043B8E51750 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_init.m */,
+				56B6A93662854B218CACECBB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.m */,
+				92C35B653E734452B603C709 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_monitor.m */,
+				AF01D54AF6F843A59CE4B847 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_time.c */,
+				EE53DCC02FBE4F2789047E02 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_window.m */,
+				E0468FDCA3CA4FF0B0E412DE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/context.c */,
+				05F6F59B754A425788BB4688 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.c */,
+				33F5C5D203BF4649AA896C2C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/init.c */,
+				DCC7175E624847719C1388AC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/input.c */,
+				D57BEC61CABD442BA18ADCA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/monitor.c */,
+				1C02CC04CBB745C19025DC61 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.m */,
+				B99329F9590540FB84081C42 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.c */,
+				956FAC13988C49589CF217AA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.c */,
+				A9F66C77D02B441880A2E016 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/vulkan.c */,
+				D4891F8F50C247C18F5FF113 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/window.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2DB2A9CE9A374877B8F0A3CF /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		2F217069A1EB40AD8A72E9BF /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				C4EBECFBA88D407FA8313394 /* Header Files */,
+				2D0170460ECA415981CFE0EF /* Source Files */,
+				5E027F0CC631487EA2499FA9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/CMakeLists.txt */,
+			);
+			name = glfw;
+			sourceTree = "<group>";
+		};
+		325A9268B1F544DF81503640 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				2DB2A9CE9A374877B8F0A3CF /* CMake Rules */,
+				ED41641F494B45BA99E73F0D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		4410352995F94C55AFE7EE1A /* glew */ = {
+			isa = PBXGroup;
+			children = (
+				F031EE2F353B4B2DA9E1EE48 /* Source Files */,
+				C96A0059DBB4484EB006EFBA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/CMakeLists.txt */,
+			);
+			name = glew;
+			sourceTree = "<group>";
+		};
+		579C741E50D149ECAA8D92EF /* CGL */ = {
+			isa = PBXGroup;
+			children = (
+				5C258BEC352049DAB1D5D606 /* Source Files */,
+				E281295E4D304653B9DFCB05 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/CMakeLists.txt */,
+			);
+			name = CGL;
+			sourceTree = "<group>";
+		};
+		5C258BEC352049DAB1D5D606 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				989830BB80F449BE99B005F4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/base64.cpp */,
+				DEF182BEFEC7437A8319067A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/color.cpp */,
+				984CB868281E4DCAB389041B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/complex.cpp */,
+				9F89D818F8F946F085C2A99D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/lodepng.cpp */,
+				E02892644BA743FC978DC9E7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix3x3.cpp */,
+				C8A3B8F92F28492FA3D9C7EA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix4x4.cpp */,
+				74DBB3D3DC524666A990BCDC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdfont.cpp */,
+				7AB27833347B4A9397278F42 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdtext.cpp */,
+				1F022DDC249641519D2CB167 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/path.cpp */,
+				01DDDEC672794CC8B5976684 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/quaternion.cpp */,
+				8F79A45897E24D09B29C80B1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/spectrum.cpp */,
+				EC63DA888C6347ECB2D08208 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/tinyxml2.cpp */,
+				B5206B6484B24AB48C8AE956 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector2D.cpp */,
+				71FCB467724B435FB15ADAA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector3D.cpp */,
+				98961B6FBFC54CE4B6E1F5EA /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector4D.cpp */,
+				B9B9DA94338C405CB39A3AB5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/viewer.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6D075AE924154E7887E1E5EB /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACEAE82BE67E4C7687B3D713 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.h */,
+				FA48622C03244BBFBB5E2F3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.h */,
+				11E0F0460F3E4DFC8046C47D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/renderer.h */,
+				528D41E02F394ED9B73B3676 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/bsdf.h */,
+				A96DCB4C63054EA7AA9EA39C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera.h */,
+				68D4F76887114C8EB5718C23 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/intersection.h */,
+				5988656B643F4B16ABE8C349 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/pathtracer.h */,
+				B470C8A59CF64D0180C7A750 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/ray.h */,
+				F4D74D977842433EA4B97C88 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.h */,
+				8EC2ED2F17414A028804CB17 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.h */,
+				3F0F926551EE49C8BB9FB829 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/aggregate.h */,
+				8E002044D6D340CB861206A2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bbox.h */,
+				AE755F7BFA184AA5B72BEB94 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bvh.h */,
+				D91CCA2B8D474FA6A67CF530 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.h */,
+				0F49C210326D4FD58587F359 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.h */,
+				8EC1990E904B4E7BA3FF4049 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada_info.h */,
+				290E8EF5F36B46CBAB1ABABF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.h */,
+				4818E362436944388B65A76E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.h */,
+				899F607CB9B54D6DA0FAB5E4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.h */,
+				13E7FF9727E54B628DF72F2C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.h */,
+				CA86B007A50D43CBA96CAD19 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.h */,
+				DA0D572B8ECE43C8B88B5405 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/ambient_light.h */,
+				2DC749171DED4AB1ADB15D44 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/area_light.h */,
+				C265FBFCEE46419FA8D50F63 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/directional_light.h */,
+				2A88953983F34B3DBD6588D4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/draw_style.h */,
+				71565824FA394C3997C81D46 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/environment_light.h */,
+				5FB9E39AB8594100BC0FFE51 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/material.h */,
+				8A66A47F895740F4BC8239DC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.h */,
+				9331705CCD78458BBDFF745D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh_view.h */,
+				3C8C11861257449681375355 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/point_light.h */,
+				07E5321413D74BF2A434F82B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.h */,
+				94CFF75AFC754AD8834D1F79 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.h */,
+				4AD36D880D3A4EA5AD0DF860 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/spot_light.h */,
+				D7F0D8F73DAF4BA7882E73A4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/light.h */,
+				8696360A9FB04CD9AA65B559 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.h */,
+				E46DCF0BC52F414CAFA352D2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/primitive.h */,
+				AD0C4102FA5D413FA9FF032F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/scene.h */,
+				5208ED3F7428437DBD48BA02 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/sphere.h */,
+				F99D928DBBBE436A8FA03C59 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/triangle.h */,
+				755C68455C984601BF6CA92C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.h */,
+				0BC60DF8070646F9A4A95F01 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/image.h */,
+				C091AF6406A14DE2A38FD198 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.h */,
+				5F337899ADB14518A2014700 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/mutablePriorityQueue.h */,
+				FA3711F1509548E193A15897 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/random_util.h */,
+				7B76D1D971A64DBBA671D72B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.h */,
+				937EE425AA2B4E2B8F152435 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/work_queue.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		7E78E53A360940D192057D9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAC2F0A56FD54E498C6A6758 /* CGL */,
+				3DA00DCC2BE04943A8D4BEBE /* glew */,
+				88999CED98C943E78D66350A /* glfw */,
+				DCFD7144173E43D3B7B30942 /* pathtracer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93DA41DFD6844C2CB1220182 /* pathtracer */ = {
+			isa = PBXGroup;
+			children = (
+				28E3143CD96542E0B41BF176 /* Source Files */,
+				6D075AE924154E7887E1E5EB /* Header Files */,
+				E60FF592759A45FB8B5778DD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CMakeLists.txt */,
+			);
+			name = pathtracer;
+			sourceTree = "<group>";
+		};
+		C47B937A802B4737AA4E7E7D /* GLFW3 */ = {
+			isa = PBXGroup;
+			children = (
+				087D61A01741406EAF730411 /* uninstall */,
+				2F217069A1EB40AD8A72E9BF /* glfw */,
+			);
+			name = GLFW3;
+			sourceTree = "<group>";
+		};
+		C4EBECFBA88D407FA8313394 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F6D648C32A241CDAE00D581 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3.h */,
+				CCE5DC6ABF5E4AAB83607F0C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include/GLFW/glfw3native.h */,
+				8396A7785ABD43AC9DB0D76D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.h */,
+				E590BE0015DC480AA0381166 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_platform.h */,
+				1898C6D88E68420480D79E83 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.h */,
+				019C8898522F4EE1A0D623D0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/internal.h */,
+				1C9755CC7F42469B8F34AC3F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/mappings.h */,
+				6B7257ED060947188C5A44D1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.h */,
+				0ADC79AFC62B456F9F3E1DA1 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.h */,
+				0AC49E1659784F2F93864B7E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.h */,
+				44812E6A0BC442B8A276AA20 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/glfw_config.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		F031EE2F353B4B2DA9E1EE48 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				69D0885C32BF47949F82C1AB /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glew.c */,
+				215C7FC800C842AB98339776 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glewinfo.c */,
+				EC5251651CC44AD4B327D166 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/visualinfo.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		771B800CFBEC4CE5A6179C28 /* CGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2BBF8FE6FFF4FF8BB4C0CB9 /* Build configuration list for PBXNativeTarget "CGL" */;
+			buildPhases = (
+				42AF9289E86E4DEBA2A768BC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C47C3E47E104BEDB9889033 /* PBXTargetDependency */,
+				03D2B703D343457E873BC394 /* PBXTargetDependency */,
+			);
+			name = CGL;
+			productName = CGL;
+			productReference = CAC2F0A56FD54E498C6A6758 /* CGL */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A1D980F82F264AC486691E44 /* pathtracer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14861840217443ED8C69C39F /* Build configuration list for PBXNativeTarget "pathtracer" */;
+			buildPhases = (
+				4DFD8F7434384785818DABBA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D358AB6C0675403B8E39A7C7 /* PBXTargetDependency */,
+				68A2CC7446064948AB241A7F /* PBXTargetDependency */,
+				DDA81159D187410A9D04CAF5 /* PBXTargetDependency */,
+				160D309AAECF45E7B44B8CF2 /* PBXTargetDependency */,
+			);
+			name = pathtracer;
+			productName = pathtracer;
+			productReference = DCFD7144173E43D3B7B30942 /* pathtracer */;
+			productType = "com.apple.product-type.tool";
+		};
+		A97948CE15F24CAE85E12007 /* glew */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F5B03AE51C543428450D744 /* Build configuration list for PBXNativeTarget "glew" */;
+			buildPhases = (
+				C83A9889C86342659C5DEE13 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glew;
+			productName = glew;
+			productReference = 3DA00DCC2BE04943A8D4BEBE /* glew */;
+			productType = "com.apple.product-type.library.static";
+		};
+		ED63ED8D40A74560BD09892E /* glfw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DC873AE16E04DC1A4CEF23E /* Build configuration list for PBXNativeTarget "glfw" */;
+			buildPhases = (
+				991AD20E6F2C4EABA63C7417 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glfw;
+			productName = glfw;
+			productReference = 88999CED98C943E78D66350A /* glfw */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E8E5BCB207B4DA1A1E568AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1130;
+			};
+			buildConfigurationList = ED0438C720644A109A51C726 /* Build configuration list for PBXProject "Assignment3" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				89DB989EBB5F440BBC054C9A /* Debug */,
+				ECE01B9514D8404CBE38EE59 /* Release */,
+				6F6A11A2F1C34E10AF2DD652 /* MinSizeRel */,
+				6BF3E3F54A2E4789AD5BBF1C /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 18FCD5FA71A74CF8806B6E09;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				E7B1FEFE47834E30AD4AD53D /* ALL_BUILD */,
+				771B800CFBEC4CE5A6179C28 /* CGL */,
+				56C0B54BB2364CE1952BDBAB /* ZERO_CHECK */,
+				A97948CE15F24CAE85E12007 /* glew */,
+				ED63ED8D40A74560BD09892E /* glfw */,
+				B3DD69AEBC6C4215AD5B085B /* install */,
+				A1D980F82F264AC486691E44 /* pathtracer */,
+				8EDBFBA004D74FABB91FF9EE /* uninstall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		038210DE443E40C885379F89 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		03A059A1452840D3B9DED18C = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		1E0E3A26D41A4869856AA741 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode -f /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		6545F4696EC245DAADD4B3F8 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode -f /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		6984DFB4F2244FA4B407A484 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		B91D5076A3E7407DB1D3F868 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode -f /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CMakeScripts/install_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		EA1E8A6ABCE34843A6653AF9 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw -f /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/CMakeScripts/uninstall_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		F43471256AAB486AA42F90E7 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42AF9289E86E4DEBA2A768BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E897ADDA7FEA4359B13AA199 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/base64.cpp */,
+				1ACA5B9B814F476C819941DF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/color.cpp */,
+				63C08B22F47A4983B8835620 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/complex.cpp */,
+				3C950F18311F4260A403B2A9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/lodepng.cpp */,
+				727F812EDBEF4F6D8F4195EC /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix3x3.cpp */,
+				52B65557C859438CACB5E0D8 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/matrix4x4.cpp */,
+				DFDE84131410412DAEAFCC86 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdfont.cpp */,
+				40C141D92DCC4851B689C303 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/osdtext.cpp */,
+				3BC6985B55234DF3BF5F3722 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/path.cpp */,
+				FDA25CA01E024E8FB9FD7094 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/quaternion.cpp */,
+				67A27C311E614F738D90079D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/spectrum.cpp */,
+				7537AA72411648FE8F22CE55 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/tinyxml2.cpp */,
+				F6156EDB01F349078D220506 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector2D.cpp */,
+				C4E0347364FB456BA08F2476 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector3D.cpp */,
+				29A6709E27024DA6990E8E25 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/vector4D.cpp */,
+				A691258B978141B59835BF6D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/src/viewer.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DFD8F7434384785818DABBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8389689ECCF740A2BAE4B65E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/application.cpp */,
+				C2BEBAA6BA2E4AC3931EAF79 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/main.cpp */,
+				7694957D675E44D1A5D5910E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.cpp */,
+				C37CC79FCB3A41D59126E2BD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/advanced_bsdf.cpp */,
+				6087E277807749A5815F518B /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/camera_lens.cpp */,
+				8178EB6A8935441A8D347CA8 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/raytraced_renderer.cpp */,
+				CDAEDA14F77E4B43866CAABF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.cpp */,
+				187D5CF243A64A18B5DFA2D6 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/camera_info.cpp */,
+				093FFB38AB9E41FCA454AE95 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada.cpp */,
+				7B8DEA55EF6B45ED94B8E13F /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/light_info.cpp */,
+				40EC97F59F0D455E84FDE38E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.cpp */,
+				78F72A612D8948F39EADB43A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.cpp */,
+				7ECFDD912E7745FF886F96F0 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/sphere_info.cpp */,
+				047029DEBFF5434D9F38CE8E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/environment_light.cpp */,
+				D1A931FC69BA4290B74AAA83 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.cpp */,
+				2C64F4B1897B4BFDA85CDF17 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.cpp */,
+				A2FC51F490DD4C778A514F9E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/sphere.cpp */,
+				423F88493A8944029DA73CC5 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.cpp */,
+				1FCBC34A21F84BC69050ACF2 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.cpp */,
+				9DD2067F8BFB4E919E44C73D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/lodepng.cpp */,
+				1AEBA75945E14D769091538D /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/sphere_drawing.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		991AD20E6F2C4EABA63C7417 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5838DE74B6C4F3B8D14378C /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_init.m */,
+				8FDB7B035A164AA58CA264EF /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_joystick.m */,
+				6592063B2F534926AC92E2EE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_monitor.m */,
+				B09C103323354F1D8D768486 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_time.c */,
+				7BC8273E83E344678B4D9277 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/cocoa_window.m */,
+				444112E6E86C415E9E5A5B13 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/context.c */,
+				1BECE14C157049B08B553E55 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/egl_context.c */,
+				E697C5658BCD44958C4DB80E /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/init.c */,
+				B244DB96C9994F91B90462E7 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/input.c */,
+				1A4BAA04704042839BA35C63 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/monitor.c */,
+				9816B132D0DE4EC1BC80224A /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/nsgl_context.m */,
+				11CEE65476D94701BC70DC64 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/osmesa_context.c */,
+				66F0429E1FA94A40864481A4 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/posix_thread.c */,
+				CAFEB533730E48F9B9A24078 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/vulkan.c */,
+				DF9FB9E801044D99ACA82ACD /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src/window.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C83A9889C86342659C5DEE13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62F663334A5541929B9B6088 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glew.c */,
+				414295C82C8D4A74B72E65CE /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/glewinfo.c */,
+				1CBED9DAD41D4AEFA0515AB9 /* /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/src/visualinfo.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03D2B703D343457E873BC394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A97948CE15F24CAE85E12007 /* glew */;
+			targetProxy = 72215A8AC6404ADEB387C473 /* PBXContainerItemProxy */;
+		};
+		160D309AAECF45E7B44B8CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56C0B54BB2364CE1952BDBAB /* ZERO_CHECK */;
+			targetProxy = E7D2B37595CD4383B1CBFADB /* PBXContainerItemProxy */;
+		};
+		4C2312095DE34C61BF9748AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A97948CE15F24CAE85E12007 /* glew */;
+			targetProxy = 42736E0BD35C4166BC604186 /* PBXContainerItemProxy */;
+		};
+		53EA0F11C437487D832C6A6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56C0B54BB2364CE1952BDBAB /* ZERO_CHECK */;
+			targetProxy = 0C89397C3461474F9DCE742A /* PBXContainerItemProxy */;
+		};
+		557C2584B8E2411BB762FF46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1D980F82F264AC486691E44 /* pathtracer */;
+			targetProxy = E4BFAB9D0A464C2E9506568D /* PBXContainerItemProxy */;
+		};
+		68A2CC7446064948AB241A7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 771B800CFBEC4CE5A6179C28 /* CGL */;
+			targetProxy = 29F4852431FC4CCCBE6B64F7 /* PBXContainerItemProxy */;
+		};
+		8C47C3E47E104BEDB9889033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED63ED8D40A74560BD09892E /* glfw */;
+			targetProxy = 7E0F8458360548188DF082EB /* PBXContainerItemProxy */;
+		};
+		ADCFD6F5C4FC4D3ABA5FE36A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED63ED8D40A74560BD09892E /* glfw */;
+			targetProxy = D3622CAF6FB14569B80EEEB4 /* PBXContainerItemProxy */;
+		};
+		AE4454D1183F435C9425258B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 771B800CFBEC4CE5A6179C28 /* CGL */;
+			targetProxy = 084796AEE4404E4399EFC5E4 /* PBXContainerItemProxy */;
+		};
+		D358AB6C0675403B8E39A7C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED63ED8D40A74560BD09892E /* glfw */;
+			targetProxy = 91E439B7BB014A3DA49CFF01 /* PBXContainerItemProxy */;
+		};
+		DDA81159D187410A9D04CAF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A97948CE15F24CAE85E12007 /* glew */;
+			targetProxy = DB9222DCC3DC4981A3C715F1 /* PBXContainerItemProxy */;
+		};
+		F1EAA2E0667F4E9DA1A93CD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7B1FEFE47834E30AD4AD53D /* ALL_BUILD */;
+			targetProxy = BE5F81C71C5E4EF6AE20BFEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09244DC37821448D86D0D14E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL",/usr/local/include/freetype2,"/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2     ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CGL;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		1232E1D2417A4263BDA578CE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL",/usr/local/include/freetype2,"/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2        -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CGL;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		124CAE55321D4A9EB6897B24 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				LIBRARY_SEARCH_PATHS = " /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2        -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lpt31 -lpt31 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/RelWithDebInfo/libCGL.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /usr/local/lib/libfreetype.dylib /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew/RelWithDebInfo/libglew.a /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/RelWithDebInfo/libglfw3.a  -framework Cocoa -framework IOKit -framework CoreFoundation /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = pathtracer;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		2B78E4283ABC4ACDA821C013 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL",/usr/local/include/freetype2,"/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2     -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CGL;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		33E43CC0C5AE41B0933D2FB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		36CEAAE4E1D443DAA5B6D7D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				LIBRARY_SEARCH_PATHS = " /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2     ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lpt31 -lpt31 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/Debug/libCGL.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /usr/local/lib/libfreetype.dylib /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew/Debug/libglew.a /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/Debug/libglfw3.a  -framework Cocoa -framework IOKit -framework CoreFoundation /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = pathtracer;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		3C5BA1C235234DC0A175C334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/build";
+			};
+			name = Debug;
+		};
+		413677DBEFFB40199F573731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		48737572E0A246D5B79DDF05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		52007B80CE4B476887A72AF7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		5A0C48765944479AAC2BA527 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glew;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5D1A6AC8F29547F08254A129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL",/usr/local/include/freetype2,"/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2     -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CGL;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		642C74A9467248DFBDAB0588 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		68F365103AE349339DF0CA6F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				LIBRARY_SEARCH_PATHS = " /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lpt31 -lpt31 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/MinSizeRel/libCGL.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /usr/local/lib/libfreetype.dylib /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew/MinSizeRel/libglew.a /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/MinSizeRel/libglfw3.a  -framework Cocoa -framework IOKit -framework CoreFoundation /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = pathtracer;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6CA8E7A967B6410D914CAF55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		78616EB2E5E64E3B94B43FDC /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glew;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		7CC6AE31C0AD4864823F6D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glew;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		82DCB3B5C44A496DAC67CAEE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		84689585BE264409847C668B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/build";
+			};
+			name = Release;
+		};
+		869F16C106704AA9B483BA77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "   -fPIC -Wall '-std=c99'  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		9B443F49AFAB4686A294E2FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL");
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				LIBRARY_SEARCH_PATHS = " /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/libs/AVX2/x64_apple";
+				OTHER_CPLUSPLUSFLAGS = " -D__SOLUTIONS__=50 -std=c++11 -m64      -mavx2     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -lpt31 -lpt31 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/Release/libCGL.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd /usr/local/lib/libfreetype.dylib /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew/Release/libglew.a /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src/Release/libglfw3.a  -framework Cocoa -framework IOKit -framework CoreFoundation /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = pathtracer;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		A47672C6C05A4676BED4FEB9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		AD385516E8FC467EBCAF16AB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B08AB12708554B9A864E6870 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		C1F517600694491F97F0A1AD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C6395246E0D74B2E8A8F0409 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -Wall '-std=c99'  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C80954C322DA49938CFCF3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		D1918910339147969DF502E6 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC -Wall '-std=c99'  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D79F107748FE4A2080EE195E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/build";
+			};
+			name = RelWithDebInfo;
+		};
+		E0A5EC0B80A64C2E96EB7CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		E6C84E2D9A7C4BBDB8FFB46C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glew;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glew";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		EAADCE09DDA249BDBDDA8CDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		EB6ACE4704BC44D9A9CDD9D0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/build";
+			};
+			name = MinSizeRel;
+		};
+		F08C480D45494ADCBBD2BD08 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		F2038459925F46D89BFD8E67 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F2B2C94F561D4D11A7DADF97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,GLEW_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/include","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glfw/src","/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -Wall '-std=c99'  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/xcode/CGL/deps/glfw/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14861840217443ED8C69C39F /* Build configuration list for PBXNativeTarget "pathtracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36CEAAE4E1D443DAA5B6D7D4 /* Debug */,
+				9B443F49AFAB4686A294E2FF /* Release */,
+				68F365103AE349339DF0CA6F /* MinSizeRel */,
+				124CAE55321D4A9EB6897B24 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3F5B03AE51C543428450D744 /* Build configuration list for PBXNativeTarget "glew" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6C84E2D9A7C4BBDB8FFB46C /* Debug */,
+				7CC6AE31C0AD4864823F6D6D /* Release */,
+				78616EB2E5E64E3B94B43FDC /* MinSizeRel */,
+				5A0C48765944479AAC2BA527 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		41FCAD07F48B4BAD9EEA9E3D /* Build configuration list for PBXAggregateTarget "uninstall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C80954C322DA49938CFCF3CF /* Debug */,
+				B08AB12708554B9A864E6870 /* Release */,
+				52007B80CE4B476887A72AF7 /* MinSizeRel */,
+				AD385516E8FC467EBCAF16AB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7DC873AE16E04DC1A4CEF23E /* Build configuration list for PBXNativeTarget "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869F16C106704AA9B483BA77 /* Debug */,
+				F2B2C94F561D4D11A7DADF97 /* Release */,
+				C6395246E0D74B2E8A8F0409 /* MinSizeRel */,
+				D1918910339147969DF502E6 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B3182B8FAF954A2C94A5BA01 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA8E7A967B6410D914CAF55 /* Debug */,
+				EAADCE09DDA249BDBDDA8CDE /* Release */,
+				642C74A9467248DFBDAB0588 /* MinSizeRel */,
+				C1F517600694491F97F0A1AD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C2BBF8FE6FFF4FF8BB4C0CB9 /* Build configuration list for PBXNativeTarget "CGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09244DC37821448D86D0D14E /* Debug */,
+				5D1A6AC8F29547F08254A129 /* Release */,
+				2B78E4283ABC4ACDA821C013 /* MinSizeRel */,
+				1232E1D2417A4263BDA578CE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D214581D8F044A10B9CDEE47 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				413677DBEFFB40199F573731 /* Debug */,
+				48737572E0A246D5B79DDF05 /* Release */,
+				F08C480D45494ADCBBD2BD08 /* MinSizeRel */,
+				F2038459925F46D89BFD8E67 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DBB9C577D2DA475D9F6749B7 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33E43CC0C5AE41B0933D2FB1 /* Debug */,
+				E0A5EC0B80A64C2E96EB7CEC /* Release */,
+				82DCB3B5C44A496DAC67CAEE /* MinSizeRel */,
+				A47672C6C05A4676BED4FEB9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		ED0438C720644A109A51C726 /* Build configuration list for PBXProject "Assignment3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5BA1C235234DC0A175C334 /* Debug */,
+				84689585BE264409847C668B /* Release */,
+				EB6ACE4704BC44D9A9CDD9D0 /* MinSizeRel */,
+				D79F107748FE4A2080EE195E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E8E5BCB207B4DA1A1E568AE /* Project object */;
+}

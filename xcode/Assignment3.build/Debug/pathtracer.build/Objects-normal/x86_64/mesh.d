@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.cpp \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/scene.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/CGL.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/misc.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/color.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/deps/glew/include/GL/glew.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/draw_style.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/gl_scene/mesh_view.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/bbox.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/ray.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/vector3D.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/vector4D.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/matrix4x4.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/spectrum.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/scene.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/primitive.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/intersection.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/bsdf.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/matrix3x3.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/pathtracer/sampler.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/CGL/include/CGL/vector2D.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/random_util.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/image.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/polymesh_info.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/collada_info.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/collada/material_info.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/util/halfEdgeMesh.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/application/meshEdit.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/light.h \
+  /Users/susanlin/Desktop/cs184/p3-2-pathtracer-sp20-susan-lin/src/scene/object.h
