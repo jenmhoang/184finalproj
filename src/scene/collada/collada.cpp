@@ -913,6 +913,17 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
           float ior = atof(e_ior->GetText());
           BSDF* bsdf = new GlassBSDF(transmittance, reflectance, roughness, ior);
           material.bsdf = bsdf;
+        } else if (type == "glowing") {
+            XMLElement* e_reflectance = get_element(e_bsdf, "reflectance");
+            XMLElement* e_alpha = get_element(e_bsdf, "alpha");
+            XMLElement* e_eta = get_element(e_bsdf, "eta");
+            XMLElement* e_k = get_element(e_bsdf, "k");
+            float alpha = atof(e_alpha->GetText());
+            Spectrum eta = spectrum_from_string(string(e_eta->GetText()));
+            Spectrum k = spectrum_from_string(string(e_k->GetText()));
+            Spectrum reflectance = spectrum_from_string(string(e_reflectance->GetText()));
+            BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha);
+            material.bsdf = bsdf;
         }
         e_bsdf = e_bsdf->NextSiblingElement();
       }

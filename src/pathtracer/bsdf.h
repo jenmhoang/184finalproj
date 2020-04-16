@@ -274,6 +274,36 @@ class EmissionBSDF : public BSDF {
 
 }; // class EmissionBSDF
 
+class GlowingBSDF : public BSDF {
+public:
+
+    GlowingBSDF(const Spectrum& eta, const Spectrum& k, const Spectrum& reflectance, float alpha)
+    : eta(eta), k(k), reflectance(reflectance), alpha(alpha) { }
+
+    double getTheta(const Vector3D& w) {
+        return acos(clamp(w.z, -1.0 + 1e-5, 1.0 - 1e-5));
+    }
+
+    double Lambda(const Vector3D& w) {
+        double theta = getTheta(w);
+        double a = 1.0 / (alpha * tan(theta));
+        return 0.5 * (erf(a) - 1.0 + exp(-a * a) / (a * PI));
+    }
+    
+    Spectrum F(const Vector3D& wi);
+    Spectrum f(const Vector3D& wo, const Vector3D& wi);
+    Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
+    Spectrum get_emission() const { return Spectrum(); }
+    bool is_delta() const { return false; }
+
+    private:
+        Spectrum eta, k;
+        float alpha;
+        Spectrum reflectance;
+        UniformGridSampler2D sampler;
+        CosineWeightedHemisphereSampler3D cosineHemisphereSampler;
+}; // class GlowingBSDF
+
 }  // namespace CGL
 
 #endif  // CGL_STATICSCENE_BSDF_H

@@ -190,6 +190,23 @@ Spectrum GlassBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
   return Spectrum();
 }
 
+// Glowing BSDF //
+
+Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
+    return Spectrum();
+}
+
+Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
+    return Spectrum();
+}
+
+Spectrum GlowingBSDF::F(const Vector3D& wi) {
+    return Spectrum();
+}
+
+
+
+
 void BSDF::reflect(const Vector3D& wo, Vector3D* wi) {
   // TODO:
   // Implement reflection of wo about normal (0,0,1) and store result in wi.
