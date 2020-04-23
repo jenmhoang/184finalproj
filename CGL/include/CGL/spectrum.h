@@ -6,12 +6,8 @@
 
 namespace CGL {
 
-/**
- * Encodes radiance & irradiance values by the intensity of each visible
- * spectrum. Note that this is not strictly an actual spectrum with all
- * wavelengths, but it gives us enough information as we can only sense
- * a particular wavelengths.
- */
+// Commutable scalar multiplication
+inline Spectrum operator*(float s, const Spectrum &c) { return c * s; }
 
 // Prints components
 std::ostream &operator<<(std::ostream &os, const Spectrum &c);
@@ -19,3 +15,4 @@ std::ostream &operator<<(std::ostream &os, const Spectrum &c);
 }  // namespace CGL
 
 #endif  // CGL_SPECTRUM_H
+
