@@ -23,7 +23,7 @@ namespace CGL {
             //~SpectralDistribution(){};
         
             Spectrum toRGB();
-            Spectrum toXYZ();
+            Vector3D toXYZ();
         
         private:
             int intensity;
