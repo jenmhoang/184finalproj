@@ -5,10 +5,12 @@
 //  Created by Ethan Buttimer on 4/22/20.
 //
 
-#include "matrix3x3.h"
+
 #include "spectral_distribution.h"
+#include "matrix3x3.h"
 
 using std::vector;
+using CGL::Matrix3x3;
 
 namespace CGL {
     //can someone figure out what is wrong here???
@@ -55,7 +57,6 @@ namespace CGL {
         for (int i = 0; i < 81; i++) {
             this->rel_distribution[i] = atWavelength(380. + i * 5.);
         }
-        
 //        this->appleRGB = Matrix3x3(2.9515, -1.2894, -0.4738, -1.0851, 1.9908,  0.0372, 0.0854, -0.2694, 1.0912);
     }
     
@@ -81,8 +82,7 @@ namespace CGL {
 
     Spectrum SpectralDistribution::toRGB() {
         Vector3D XYZ = this->toXYZ();
-        Matrix3x3 appleRGB = Matrix3x3(2.9515, -1.2894, -0.4738, -1.0851, 1.9908,  0.0372, 0.0854, -0.2694, 1.0912);
-        //Vector3D RGB = appleRGB * XYZ;
-        return Spectrum(XYZ);
+        Vector3D RGB = appleRGB * XYZ;
+        return Spectrum(RGB);
     }
 }
