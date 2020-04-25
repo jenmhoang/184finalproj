@@ -3,7 +3,8 @@
 #include <algorithm>
 #include <iostream>
 #include <utility>
-
+#include "spectral_distribution.h"
+#include "spectral_distribution.cpp"
 
 using std::max;
 using std::min;
@@ -105,7 +106,7 @@ Spectrum MicrofacetBSDF::f(const Vector3D& wo, const Vector3D& wi) {
         return Spectrum();
     }
     
-    return F(wi) * G(wo, wi) * D(h) / (4.0 * wo.z * wi.z);
+    return temp;
 }
 
 Spectrum MicrofacetBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
@@ -190,18 +191,88 @@ Spectrum GlassBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
   return Spectrum();
 }
 
+
+
 // Glowing BSDF //
 
+double GlowingBSDF::G(const Vector3D& wo, const Vector3D& wi) {
+  return 1.0 / (1.0 + Lambda(wi) + Lambda(wo));
+}
+
+double GlowingBSDF::D(const Vector3D& h) {
+    double theta = getTheta(h);
+    
+    double exponent = (-1.0) * pow(tan(theta), 2.0) / pow(this->alpha, 2.0);
+    double denominator = PI * pow(this->alpha, 2.0) * pow(cos(theta), 4.0);
+    
+    return exp(exponent) / denominator;
+}
 Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
-    return Spectrum();
+    if (wo.z <= 0 || wi.z <= 0) {
+        return Spectrum();
+    }
+    
+    Vector3D h = wo + wi;
+    h.normalize();
+    
+    Spectrum reflected = F(wi) * G(wo, wi) * D(h) / (4.0 * wo.z * wi.z);
+
+    if (reflected.x <= 0 || reflected.y <= 0 || reflected.z <= 0) {
+        return Spectrum();
+    }
+    
+    //using default of 5000K, will change
+    SpectralDistribution blackbody = SpectralDistribution(5000);
+    Spectrum emitted = blackbody.toRGB();
+    return reflected + emitted;
 }
 
 Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
-    return Spectrum();
+    // *Importance* sample Beckmann normal distribution function (NDF) here.
+      Vector2D sample = sampler.get_sample();
+      double thetat = atan(sqrt((-1.0) * pow(this->alpha, 2.0) * log(1.0 - sample.x)));
+      float phi = 2.0 * PI * sample.y;
+      
+      double xval = sin(thetat) * cos(phi);
+      double yval = sin(thetat) * sin(phi);
+      double zval = cos(thetat);
+      Vector3D h = Vector3D(xval, yval, zval);
+      
+      *wi = (-1.0) * wo + (2.0 * dot(wo, h) * h); //check this
+      
+      if (dot(h, wo) <= 0.0 || wo.z <= 0.0 || wi->z <= 0.0) {
+          *pdf = 0.0001;
+          return Spectrum();
+      }
+      
+      float exponent = (-1.0) * pow(tan(getTheta(h)), 2.0) / pow(this->alpha, 2.0);
+      
+      float Ptheta = (2.0 * sin_theta(h)) * exp(exponent) / (pow(this->alpha, 2.0) * pow(cos_theta(h), 3.0));
+      float Pphi = 1.0 / (2.0 * PI);
+      float PWofH = Ptheta * Pphi / sin_theta(h);
+      
+      *pdf = PWofH / (4.0 * dot(*wi, h));
+      
+      //*wi = cosineHemisphereSampler.get_sample(pdf); //placeholder
+      return GlowingBSDF::f(wo, *wi);
 }
 
+//normal Fresnel, should update
 Spectrum GlowingBSDF::F(const Vector3D& wi) {
-    return Spectrum();
+    Vector3D n = this->eta;
+    Vector3D k = this->k;
+    double cosWI = cos_theta(wi);
+    
+    Spectrum nk2 = (n * n + k * k);
+    double costhet = pow(cosWI, 2.0);
+    Spectrum costheta2 = Spectrum(costhet, costhet, costhet);
+    Spectrum twoncos = (2.0 * n * cosWI);
+    
+    Spectrum RS = (nk2 - twoncos + costheta2 ) / (nk2 + twoncos + costheta2);
+    
+    Spectrum RP = ((nk2 * costhet) - twoncos + Spectrum(1.0, 1.0, 1.0)) / ((nk2 * costhet) + twoncos + Spectrum(1.0, 1.0, 1.0));
+    
+    return (RS + RP) / 2.0;
 }
 
 

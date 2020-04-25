@@ -290,6 +290,8 @@ public:
         return 0.5 * (erf(a) - 1.0 + exp(-a * a) / (a * PI));
     }
     
+    double G(const Vector3D& wo, const Vector3D& wi);
+    double D(const Vector3D& h);
     Spectrum F(const Vector3D& wi);
     Spectrum f(const Vector3D& wo, const Vector3D& wi);
     Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);

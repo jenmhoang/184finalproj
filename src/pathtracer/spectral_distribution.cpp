@@ -17,6 +17,7 @@ namespace CGL {
     //one temporary 3x3 XYZ to RGB conversion matrix
     static const Matrix3x3 appleRGB = Matrix3x3(2.9515, -1.2894, -0.4738, -1.0851, 1.9908,  0.0372, 0.0854, -0.2694, 1.0912);
 
+    static const Matrix3x3 xyzToSrgb = Matrix3x3(3.2405, -1.5371, -0.4985, -0.9693, 1.8760,  0.0416, 0.0556, -0.2040, 1.0572);
 
     //CIE coordinates of wavelengths 380 - 780 nm, at 5 nm intervals
     static const float CIEXYZ_coords[81][3] = {
@@ -48,6 +49,10 @@ namespace CGL {
         {0.0002,0.0001,0.0000}, {0.0002,0.0001,0.0000}, {0.0001,0.0000,0.0000},
         {0.0001,0.0000,0.0000}, {0.0001,0.0000,0.0000}, {0.0000,0.0000,0.0000}
     };
+    
+    static const double h = 6.62606957e-34; // Planck's constant
+    static const double c = 2.99792458e8; // Speed of light
+    static const double k = 1.38064852e-23; // Boltzmann constant
         
     SpectralDistribution::SpectralDistribution(float temp) {
         this->T = temp;
@@ -62,7 +67,12 @@ namespace CGL {
     
     float SpectralDistribution::atWavelength(float lambda) {
         //compute I(T,lambda) here (eq. 2.1).
-        return 0.;
+        
+        double a = (2 * h * pow(c, 2)) / pow(lambda, 5);
+        double x = (h * c) / (lambda * k * this->T);
+        double b = 1 / (exp(x) - 1);
+        
+        return a * b;
     }
 
     Vector3D SpectralDistribution::toXYZ() {
@@ -80,9 +90,21 @@ namespace CGL {
         return XYZ/total_XYZ;
     }
 
+    //helper gamma converter
+    void applyGamma(Vector3D &RGB) {
+        for (int i = 0; i < 3; i++) {
+            if (RGB[i] <= 0.0031308) {
+                RGB[i] *= 12.92;
+            } else {
+                RGB[i] = 1.055 * pow(RGB[i], 1.0/2.4) - 0.055;;
+            }
+        }
+    }
+
     Spectrum SpectralDistribution::toRGB() {
         Vector3D XYZ = this->toXYZ();
         Vector3D RGB = appleRGB * XYZ;
+        applyGamma(RGB);
         return Spectrum(RGB);
     }
 }
