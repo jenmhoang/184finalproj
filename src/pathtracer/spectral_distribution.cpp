@@ -101,7 +101,7 @@ namespace CGL {
 
     Spectrum SpectralDistribution::toRGB() {
         Vector3D XYZ = this->toXYZ();
-        Vector3D RGB = appleRGB * XYZ;
+        Vector3D RGB = xyzToSrgb * XYZ;
         applyGamma(RGB);
         return Spectrum(RGB);
     }
