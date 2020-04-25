@@ -4,7 +4,6 @@
 #include <iostream>
 #include <utility>
 #include "spectral_distribution.h"
-#include "spectral_distribution.cpp"
 
 using std::max;
 using std::min;
