@@ -105,7 +105,7 @@ Spectrum MicrofacetBSDF::f(const Vector3D& wo, const Vector3D& wi) {
         return Spectrum();
     }
     
-    return F(wi) * G(wo, wi) * D(h) / (4.0 * wo.z * wi.z);
+    return temp;
 }
 
 Spectrum MicrofacetBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
@@ -192,8 +192,33 @@ Spectrum GlassBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
 
 // Glowing BSDF //
 
+double GlowingBSDF::G(const Vector3D& wo, const Vector3D& wi) {
+  return 1.0 / (1.0 + Lambda(wi) + Lambda(wo));
+}
+
+double GlowingBSDF::D(const Vector3D& h) {
+    double theta = getTheta(h);
+    
+    double exponent = (-1.0) * pow(tan(theta), 2.0) / pow(this->alpha, 2.0);
+    double denominator = PI * pow(this->alpha, 2.0) * pow(cos(theta), 4.0);
+    
+    return exp(exponent) / denominator;
+}
 Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
-    return Spectrum();
+    if (wo.z <= 0 || wi.z <= 0) {
+        return Spectrum();
+    }
+    
+    Vector3D h = wo + wi;
+    h.normalize();
+    
+    Spectrum reflected = F(wi) * G(wo, wi) * D(h) / (4.0 * wo.z * wi.z);
+
+    if (reflected.x <= 0 || reflected.y <= 0 || reflected.z <= 0) {
+        return Spectrum();
+    }
+    
+    return reflected;
 }
 
 Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {

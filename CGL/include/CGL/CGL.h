@@ -23,7 +23,7 @@ class Color;
 typedef Vector3D Spectrum;
 
 class Renderer;
-clMatrix3x3xt;
+class Matrix3x3;
 class Viewer;
 class Timer;
 
