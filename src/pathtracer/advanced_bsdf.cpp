@@ -222,10 +222,12 @@ Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
     }
     
     //using default of 5000K, will change
-    SpectralDistribution blackbody = SpectralDistribution(10);
+    SpectralDistribution blackbody = SpectralDistribution(5000);
     Spectrum emitted = blackbody.toRGB();
     //std::cout << emitted.r << ", " << emitted.g << ", " << emitted.b << std::endl;
-    return emitted;
+    
+    float r = 0.8;
+    return (1.0 - r) * emitted + reflected * r;
 }
 
 Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {

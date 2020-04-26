@@ -852,7 +852,6 @@ void ColladaParser::parse_polymesh(XMLElement* xml, PolymeshInfo& polymesh) {
 }
 
 void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
-    std::cout << "parsed" << std::endl;
   // name & id
   material.id   = xml->Attribute( "id" );
   material.name = xml->Attribute("name");
