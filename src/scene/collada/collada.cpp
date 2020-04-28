@@ -852,7 +852,6 @@ void ColladaParser::parse_polymesh(XMLElement* xml, PolymeshInfo& polymesh) {
 }
 
 void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
-
   // name & id
   material.id   = xml->Attribute( "id" );
   material.name = xml->Attribute("name");
@@ -868,7 +867,7 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
 
     XMLElement* tech_common = get_technique_common(e_effect); // common profile
     XMLElement* tech_CGL = get_technique_CGL(e_effect); // CGL profile
-
+      
     if (tech_CGL) {
       XMLElement *e_bsdf = tech_CGL->FirstChildElement();
       while (e_bsdf) {
@@ -924,10 +923,12 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
             Spectrum reflectance = spectrum_from_string(string(e_reflectance->GetText()));
             BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha);
             material.bsdf = bsdf;
+            std::cout << "glow" << std::endl;
         }
         e_bsdf = e_bsdf->NextSiblingElement();
       }
     } else if (tech_common) {
+      std::cout << "common" << std::endl;
       XMLElement* e_diffuse = get_element(tech_common, "phong/diffuse/color");
       if (e_diffuse) {
         Spectrum reflectance = spectrum_from_string(string(e_diffuse->GetText()));

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <utility>
 #include "spectral_distribution.h"
-#include "spectral_distribution.cpp"
 
 using std::max;
 using std::min;
@@ -207,6 +206,7 @@ double GlowingBSDF::D(const Vector3D& h) {
     
     return exp(exponent) / denominator;
 }
+
 Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
     if (wo.z <= 0 || wi.z <= 0) {
         return Spectrum();
@@ -224,7 +224,10 @@ Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
     //using default of 5000K, will change
     SpectralDistribution blackbody = SpectralDistribution(5000);
     Spectrum emitted = blackbody.toRGB();
-    return reflected + emitted;
+    //std::cout << emitted.r << ", " << emitted.g << ", " << emitted.b << std::endl;
+    
+    float r = 0.8;
+    return (1.0 - r) * emitted + reflected * r;
 }
 
 Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
