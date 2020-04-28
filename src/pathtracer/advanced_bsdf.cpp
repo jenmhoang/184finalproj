@@ -221,17 +221,15 @@ Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
         return Spectrum();
     }
     
-    Spectrum emitted = get_emission();
+    //using default of 5000K, will change
+    SpectralDistribution blackbody = SpectralDistribution(5000);
+    Spectrum emitted = blackbody.toRGB();
+    //std::cout << emitted.r << ", " << emitted.g << ", " << emitted.b << std::endl;
     
     float r = 0.8;
     return (1.0 - r) * emitted + reflected * r;
 }
 
-Spectrum GlowingBSDF::get_emission() {
-    SpectralDistribution blackbody = SpectralDistribution(5000);
-    Spectrum emitted = blackbody.toRGB();
-    return emitted;
-}
 
 Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
     // *Importance* sample Beckmann normal distribution function (NDF) here.
