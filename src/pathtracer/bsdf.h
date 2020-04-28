@@ -293,6 +293,8 @@ public:
     double G(const Vector3D& wo, const Vector3D& wi);
     double D(const Vector3D& h);
     Spectrum F(const Vector3D& wi);
+    Spectrum F_s(const Vector3D& wi);
+    Spectrum F_p(const Vector3D& wi);
     Spectrum f(const Vector3D& wo, const Vector3D& wi);
     Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
     Spectrum get_emission() const { return Spectrum(); }

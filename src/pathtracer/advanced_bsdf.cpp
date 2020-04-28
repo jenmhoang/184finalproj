@@ -46,20 +46,6 @@ double MicrofacetBSDF::D(const Vector3D& h) {
   //return std::pow(cos_theta(h), 100.0);;
 }
 
-double helperFres (double n, double k, double costheta) {
-    
-    double nk2 = (pow(n, 2.0) + pow(k, 2.0));
-    double costheta2 = pow(costheta, 2.0);
-    double twoncos = (2.0 * n * costheta);
-    
-    double RS = (nk2 - twoncos + costheta2) / (nk2 + twoncos + costheta2);
-    
-    double RP = ((nk2 * costheta2) - twoncos + 1.0) / ((nk2 * costheta2) + twoncos + 1.0);
-    
-    return (RS + RP) / 2.0;
-    
-}
-
 Spectrum MicrofacetBSDF::F(const Vector3D& wi) {
   // TODO: proj3-2, part 3
   // Compute Fresnel term for reflection on dielectric-conductor interface.
@@ -278,7 +264,28 @@ Spectrum GlowingBSDF::F(const Vector3D& wi) {
     return (RS + RP) / 2.0;
 }
 
+Spectrum polFres (Spectrum thing) {
+    return Vector3D(pow(abs(thing.x), 2.0), pow(abs(thing.y), 2.0), pow(abs(thing.z), 2.0));
+}
 
+Spectrum GlowingBSDF::F_s(const Vector3D& wi) {
+    Vector3D n = this->eta;
+    Vector3D air = Vector3D(1.33, 1.33, 1.33); //other n, assuming air
+    double cosWI = cos_theta(wi);
+    double cosWO = cos_theta(asin(n.x * sin_theta(wi))); // snells law is n1sintheta1 = n2 sintheta2
+    
+    return polFres((n * cosWI - air * cosWO) / (n * cosWI + air * cosWO));
+    
+}
+
+Spectrum GlowingBSDF::F_p(const Vector3D& wi) {
+    Vector3D n = this->eta;
+    Vector3D air = Vector3D(1.33, 1.33, 1.33); //other n, assuming air
+    double cosWI = cos_theta(wi);
+    double cosWO = cos_theta(asin(n.x * sin_theta(wi))); // snells law is n1sintheta1 = n2 sintheta2
+    
+    return polFres((n * cosWO - air * cosWI) / (n * cosWO + air * cosWI));
+}
 
 
 void BSDF::reflect(const Vector3D& wo, Vector3D* wi) {

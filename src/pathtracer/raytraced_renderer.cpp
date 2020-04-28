@@ -9,6 +9,7 @@
 
 #include "CGL/CGL.h"
 #include "CGL/vector3D.h"
+#include "CGL/vector2D.h"
 #include "CGL/matrix3x3.h"
 #include "CGL/lodepng.h"
 

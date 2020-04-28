@@ -6,7 +6,7 @@ project(Assignment3)
 #-------------------------------------------------------------------------------
 option(BUILD_DEBUG     "Build with debug settings"    OFF)
 option(BUILD_DOCS      "Build documentation"          OFF)
-option(BUILD_CUSTOM    "Build without reference"      OFF)
+option(BUILD_CUSTOM    "Build without reference"      ON)
 
 if (MSVC)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D__SOLUTIONS__=50")
@@ -64,10 +64,6 @@ set(APPLICATION_3_2_SOURCE
     src/pathtracer/camera_lens.cpp
     src/pathtracer/raytraced_renderer.cpp
     src/pathtracer/spectral_distribution.cpp
-<<<<<<< HEAD
-
-=======
->>>>>>> cbf1b2c1f4b4751cad5fdd0022b1b3392c6f40c3
 
     # misc
     src/util/sphere_drawing.cpp
@@ -126,10 +122,7 @@ set(APPLICATION_HEADERS
     src/pathtracer/raytraced_renderer.h
     src/pathtracer/sampler.h
     src/pathtracer/spectral_distribution.h
-<<<<<<< HEAD
 
-=======
->>>>>>> cbf1b2c1f4b4751cad5fdd0022b1b3392c6f40c3
     # misc
     src/util/sphere_drawing.h
     src/util/lodepng.h
