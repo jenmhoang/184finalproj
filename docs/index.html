@@ -27,7 +27,7 @@
     </div>
     <!-- <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2020</h1> -->
     <div class="tabs">
-      <div id="dt2">
+      <div id="dt1">
         <p>
           The goal of our project is to simulate gradient light emission from heated metal objects. We will model how heat and
           the resulting glow varies over a surface, with consideration of material attributes.
@@ -138,7 +138,7 @@
         </li>
         <li>Autodesk Maya and/or Blender for creation of example COLLADA files</li>
       </div>
-      <div id="dt1">
+      <div id="dt2">
         <h3>Diffuse Blackbody Emission</h3>
         <p>
           We start by implementing the glow of perfectly diffuse emissive objects for some input temperature. In this case, our
@@ -160,14 +160,16 @@
           >
         </h5>
 
-        <!-- <img style="width: 50%" src="images/kelvin-temp.jpg" /> -->
         <hr />
         <h3>Test Renders</h3>
         <p>
           We used reflectance data from
           <a href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson">this website</a> to calculate spectral
           distributions at wavelength 667nm, estimated at 0&#176; incidence. Our renders demonstrate temperature-responsive glow
-          with direct illumination only.
+          with direct illumination only. 
+            <p>Our input temperature varies along the Kelvin temperature scale:</p>
+            <img style="width: 30%" src="images/kelvin-temp.jpg" />
+          
         </p>
         Gold dragon, reflectance factor = 0.9
         <div class="row">
