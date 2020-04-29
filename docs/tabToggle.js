@@ -9,7 +9,7 @@ for (var i = 0; i < tabs.length; i++) {
 }
 
 function openTab(section){
-    $(section).slideDown(1000);
+    $(section).fadeIn(1000);
     $('div').animate({
         scrollTop: 0
       }, 800);
@@ -18,7 +18,7 @@ function openTab(section){
 function closeTab(){
     var ids = ["#dt1", "#dt2", "#dt3", "#dt4"];
     $.each(ids, function(i, v) {
-        $(v).slideUp(1000);
+        $(v).hide();
     });
 }
 
