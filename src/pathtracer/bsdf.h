@@ -292,7 +292,7 @@ public:
     }
     
     Spectrum get_emission() const {
-        SpectralDistribution blackbody = SpectralDistribution(5000);
+        SpectralDistribution blackbody = SpectralDistribution(3000);
         Spectrum emitted = blackbody.toRGB();
         //std::cout << emitted << std::endl;
         return (1. - reflectance) * emitted;
