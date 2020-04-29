@@ -142,17 +142,23 @@
         <h3>Diffuse Blackbody Emission</h3>
         <p>
           We start by implementing the glow of perfectly diffuse emissive objects for some input temperature. In this case, our
-          object is an ideal blackbody that absorbs and reemits all energy falling upon it. We find the spectral radiance of our
-          blackbody through Planck’s law of black-body radiation.
+          object is an ideal blackbody that absorbs and re-emits all energy falling upon it. We find the spectral radiance of
+          our blackbody through Planck’s law of black-body radiation.
         </p>
         <img style="width: 30%" src="images/plancksEq.svg" />
-        <p>Using this equation, we calculate a distribution of 81 discrete wavelengths ranging from 380 - 780 nm, roughly the human visual spectrum. Then, in order to compute a final color compatible with the computer, we first convert the high dimensional spectrum to the three dimensional CIE 1931 XYZ color space, then apply a transformation matrix and gamma function to convert to sRGB. This final color is 
+        <p>
+          Using this equation, we calculate a distribution of 81 discrete wavelengths ranging from 380 - 780 nm, roughly the
+          human visual spectrum. Then, in order to compute a final color compatible with the computer display, we first convert
+          the high dimensional spectrum to the three dimensional CIE 1931 XYZ color space, then apply a transformation matrix
+          and gamma function to convert to sRGB.
         </p>
+        <hr />
         <h3>Reflectance</h3>
         <p>
-          In order to represent gradual transitions between cold and glowing heat, we combine our blackbody radiation with
-          reflectance, weighting it by the absorbance factor of our material (1 - reflectance), in accordance with Kirchoff’s
-          Law of Thermal Radiation.
+          In order to realistically render gradual changes in glow color as temperature varies, we combine our estimate of
+          blackbody radiation with the microfacet-model reflectance of the metal. The final sampled color is a combination of
+          reflected and emitted light, weighted by the absorbance factor of the material (1 - reflectance). Kirchoff’s Law of
+          Thermal Radiation ensures that the energy of the system is conserved, resulting in more realistic renders.
         </p>
         <h5 style="width: 70%; margin: auto">
           Kirchoff’s Law:
@@ -166,14 +172,14 @@
         <h3>Test Renders</h3>
         <p>
           We used reflectance data from
-          <a href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson">this website</a> to calculate spectral
-          distributions at wavelength 667nm, estimated at 0&#176; incidence. Our renders demonstrate temperature-responsive glow
-          with direct illumination only. 
-            <p>Our input temperature varies along the Kelvin temperature scale:</p>
-            <img style="width: 30%" src="images/kelvin-temp.jpg" />
-          
+          <a href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson">this website</a> to estimate an average
+          reflectance factor for each material (3D Shelf, 614 nm, 0° incidence). Our renders demonstrate temperature-responsive
+          glow, direct illumination only (for now).
         </p>
+        <p>Our input temperature varies along the Kelvin temperature scale:</p>
+        <img style="width: 80%" src="images/color_scale_02.png" /> <br /><br />
         Gold dragon, reflectance factor = 0.9
+
         <div class="row">
           <div class="column">
             <img src="images/dragon_10000K.png" />
@@ -225,6 +231,23 @@
             <figcaption>2000K</figcaption>
           </div>
         </div>
+        <hr />
+        <h3>Fresnel Terms</h3>
+        <p>
+          As we plan to take into consideration the effect of polarized light, we’ve split up the Fresnel reflectance
+          coefficient calculations into s polarization and p polarization.
+        </p>
+        <div class="row" style="justify-content: space-around;">
+          <img src="images/rpEq.png" /> <img src="images/rsEq.png" />
+        </div>
+
+        <hr />
+        <h3>Process</h3>
+        <p>
+          So far we’ve modified the aforementioned quantities in a new BSDF class, called GlowingBSDF. We’ve also modified the
+          estimation of global illumination by replacing the zero-bounce-radiance with the blackbody radiation weighted by the
+          absorbance -- this allows us to simulate the glowing of the material.
+        </p>
       </div>
     </div>
     <script src="tabToggle.js"></script>
