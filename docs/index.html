@@ -20,18 +20,14 @@
         <div id="pagination">
           <div class="tab active" id="t1"><div style="margin: auto">Proposal</div></div>
           <div class="tab" id="t2"><div style="margin: auto">Milestone</div></div>
-          <div class="tab" id="t3"><div style="margin: auto">x</div></div>
-          <div class="tab" id="t4"><div style="margin: auto">x</div></div>
+          <div class="tab" id="t3"><div style="margin: auto">Presentation</div></div>
+          <div class="tab" id="t4"><div style="margin: auto">Final Report</div></div>
         </div>
       </div>
     </div>
     <!-- <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2020</h1> -->
     <div class="tabs">
-      <div id="dt1">
-        <!-- <h1 style="text-shadow: 1px 1px 2px black, 0 0 25px orange, 0 0 5px darkorange" align="middle">
-          Material-Based Glow Simulation of Heated Metal Objects
-        </h1>
-        <h3 align="middle">Ethan Buttimer, Jen Hoang, Susan Lin</h3> -->
+      <div id="dt2">
         <p>
           The goal of our project is to simulate gradient light emission from heated metal objects. We will model how heat and
           the resulting glow varies over a surface, with consideration of material attributes.
@@ -142,7 +138,90 @@
         </li>
         <li>Autodesk Maya and/or Blender for creation of example COLLADA files</li>
       </div>
-      <div id="dt2"></div>
+      <div id="dt1">
+        <h3>Diffuse Blackbody Emission</h3>
+        <p>
+          We start by implementing the glow of perfectly diffuse emissive objects for some input temperature. In this case, our
+          object is an ideal blackbody that absorbs and reemits all energy falling upon it. We find the spectral radiance of our
+          blackbody through Planck’s law of black-body radiation.
+        </p>
+        <img style="width: 30%" src="images/plancksLawEquation.png" />
+        <h3>Reflectance</h3>
+        <p>
+          In order to represent gradual transitions between cold and glowing heat, we combine our blackbody radiation with
+          reflectance, weighting it by the absorbance factor of our material (1 - reflectance), in accordance with Kirchoff’s
+          Law of Thermal Radiation.
+        </p>
+        <h5 style="width: 70%; margin: auto">
+          Kirchoff’s Law:
+          <i
+            >At thermal equilibrium, the emissivity and the absorptivity of a surface at a given temperature and wavelength are
+            equal</i
+          >
+        </h5>
+
+        <!-- <img style="width: 50%" src="images/kelvin-temp.jpg" /> -->
+        <hr />
+        <h3>Test Renders</h3>
+        <p>
+          We used reflectance data from
+          <a href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson">this website</a> to calculate spectral
+          distributions at wavelength 667nm, estimated at 0&#176; incidence. Our renders demonstrate temperature-responsive glow
+          with direct illumination only.
+        </p>
+        Gold dragon, reflectance factor = 0.9
+        <div class="row">
+          <div class="column">
+            <img src="images/dragon_10000K.png" />
+            <figcaption>10000K</figcaption>
+          </div>
+          <div class="column">
+            <img src="images/dragon_7000K.png" />
+            <figcaption>7000K</figcaption>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="images/dragon_5000K.png" />
+            <figcaption>5000K</figcaption>
+          </div>
+          <div class="column">
+            <img src="images/dragon_3000K.png" />
+            <figcaption>3000K</figcaption>
+          </div>
+          <div class="column">
+            <img src="images/dragon_2000K.png" />
+            <figcaption>2000K</figcaption>
+          </div>
+        </div>
+        <br /><br />
+        Lead bunny, reflectance factor = 0.6
+        <div class="row">
+          <div class="column">
+            <img src="images/bunny_10000K.png" />
+            <figcaption>10000K</figcaption>
+          </div>
+          <div class="column">
+            <img src="images/bunny_7000K.png" />
+            <figcaption>7000K</figcaption>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="column">
+            <img src="images/bunny_5000K.png" />
+            <figcaption>5000K</figcaption>
+          </div>
+          <div class="column">
+            <img src="images/bunny_3000K.png" />
+            <figcaption>3000K</figcaption>
+          </div>
+          <div class="column">
+            <img src="images/bunny_2000K.png" />
+            <figcaption>2000K</figcaption>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="tabToggle.js"></script>
   </body>
