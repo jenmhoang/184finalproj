@@ -10,6 +10,10 @@ img {
   margin: auto;
 }
 
+hr {
+  margin-top: 30px;
+}
+
 h1 {
   font-size: 30px;
   /* color: #e46787; */
@@ -97,6 +101,7 @@ table {
   transition: 0.3s;
   /* color: #e46787; */
   color: black;
+  cursor: pointer;
 }
 
 .active {
@@ -113,9 +118,8 @@ table {
 /* Tab Information */
 .tabs {
   background-color: #f5f6fc;
-  overflow-y: scroll;
-  /* height: 90%; */
-  padding: 20px 150px;
+  height: 100%;
+
   bottom: 0;
 }
 
@@ -127,10 +131,18 @@ table {
 #dt2,
 #dt3,
 #dt4 {
+  padding: 20px 150px;
+  background-color: #f5f6fc;
   display: none;
 }
 
+#dt1 {
+  padding: 20px 150px;
+  background-color: #f5f6fc;
+}
+
 .row {
+  padding: 10px 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
