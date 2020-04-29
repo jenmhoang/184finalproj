@@ -216,6 +216,7 @@ Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
     return (1.0 - r) * emitted + reflected * r;
 }
 
+
 Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
     // *Importance* sample Beckmann normal distribution function (NDF) here.
       Vector2D sample = sampler.get_sample();
