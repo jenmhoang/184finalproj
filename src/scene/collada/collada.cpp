@@ -923,12 +923,12 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
             Spectrum reflectance = spectrum_from_string(string(e_reflectance->GetText()));
             BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha);
             material.bsdf = bsdf;
-            std::cout << "glow" << std::endl;
+            //std::cout << "glow" << std::endl;
         }
         e_bsdf = e_bsdf->NextSiblingElement();
       }
     } else if (tech_common) {
-      std::cout << "common" << std::endl;
+      //std::cout << "common" << std::endl;
       XMLElement* e_diffuse = get_element(tech_common, "phong/diffuse/color");
       if (e_diffuse) {
         Spectrum reflectance = spectrum_from_string(string(e_diffuse->GetText()));
