@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="smoothScroll.js"></script>
   </head>
   <body>
     <div class="container">
@@ -20,7 +21,7 @@
         <div id="pagination">
           <div class="tab active" id="t1"><div style="margin: auto">Proposal</div></div>
           <div class="tab" id="t2"><div style="margin: auto">Milestone</div></div>
-          <div class="tab" id="t3"><div style="margin: auto">Presentation</div></div>
+          <div class="tab" id="t3"><div style="margin: auto">Milestone Presentation</div></div>
           <div class="tab" id="t4"><div style="margin: auto">Final Report</div></div>
         </div>
       </div>
@@ -139,7 +140,18 @@
         <li>Autodesk Maya and/or Blender for creation of example COLLADA files</li>
       </div>
       <div id="dt2">
-        <h3>Diffuse Blackbody Emission</h3>
+        <ul class="breadcrumb">
+          <li><a href="#dbe">Diffuse Blackbody Emission</a></li>
+          <li><a href="#r">Reflectance</a></li>
+          <li><a href="#tr">Test Renders</a></li>
+          <li><a href="#ft">Fresnel Terms</a></li>
+          <li><a href="#p">Process</a></li>
+          <li><a href="#r2">Reflection</a></li>
+          <li><a href="#ns">Next Steps</a></li>
+        </ul>
+
+        <hr />
+        <h3 id="dbe">Diffuse Blackbody Emission</h3>
         <p>
           We start by implementing the glow of perfectly diffuse emissive objects for some input temperature. In this case, our
           object is an ideal blackbody that absorbs and re-emits all energy falling upon it. We find the spectral radiance of
@@ -152,8 +164,9 @@
           the high dimensional spectrum to the three dimensional CIE 1931 XYZ color space, then apply a transformation matrix
           and gamma function to convert to sRGB.
         </p>
+
         <hr />
-        <h3>Reflectance</h3>
+        <h3 id="r">Reflectance</h3>
         <p>
           In order to realistically render gradual changes in glow color as temperature varies, we combine our estimate of
           blackbody radiation with the microfacet-model reflectance of the metal. The final sampled color is a combination of
@@ -169,7 +182,7 @@
         </h5>
 
         <hr />
-        <h3>Test Renders</h3>
+        <h3 id="tr">Test Renders</h3>
         <p>
           We used reflectance data from
           <a href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson">this website</a> to estimate an average
@@ -179,7 +192,6 @@
         <p>Our input temperature varies along the Kelvin temperature scale:</p>
         <img style="width: 80%" src="images/color_scale_02.png" /> <br /><br />
         Gold dragon, reflectance factor = 0.9
-
         <div class="row">
           <div class="column">
             <img src="images/dragon_10000K.png" />
@@ -231,8 +243,9 @@
             <figcaption>2000K</figcaption>
           </div>
         </div>
+
         <hr />
-        <h3>Fresnel Terms</h3>
+        <h3 id="ft">Fresnel Terms</h3>
         <p>
           As we plan to take into consideration the effect of polarized light, we’ve split up the Fresnel reflectance
           coefficient calculations into s polarization and p polarization.
@@ -242,12 +255,42 @@
         </div>
 
         <hr />
-        <h3>Process</h3>
+        <h3 id="p">Process</h3>
         <p>
           So far we’ve modified the aforementioned quantities in a new BSDF class, called GlowingBSDF. We’ve also modified the
           estimation of global illumination by replacing the zero-bounce-radiance with the blackbody radiation weighted by the
           absorbance -- this allows us to simulate the glowing of the material.
         </p>
+
+        <hr />
+        <h3 id="r2">Reflection</h3>
+        <p>
+          We're slightly behind the progress goals set in the proposal, but we’ve already produced some nice renders with the
+          features implemented so far. We still have plenty of time to implement the most important features that remain.
+        </p>
+
+        <hr />
+        <h3 id="ns">Next Steps</h3>
+        <p>
+          Right now, our renders only demonstrate the direct illumination of the glow effect. We will work on tracing
+          multi-bounce paths to achieve global illumination. We also aim to render objects with non-uniform heat distributions
+          by interpolating glow gain values over a heat map.
+        </p>
+      </div>
+      <div id="dt3">
+        <div style="text-align:center">
+          <video width="80%" controls><source src="cs184midpoint.mp4" type="video/mp4" /></video>
+        </div>
+        <br /><br />
+        <iframe
+          src="https://docs.google.com/presentation/d/e/2PACX-1vQSmtT-FitS9jFJ5Pfs9Fnbt1jnp7FIJ0O4s2euif5KmC7Q_evX-ry6gL4dWNkdQgbbudK59-7WTgOe/embed?start=false&loop=true&delayms=5000"
+          frameborder="0"
+          width="960"
+          height="569"
+          allowfullscreen="true"
+          mozallowfullscreen="true"
+          webkitallowfullscreen="true"
+        ></iframe>
       </div>
     </div>
     <script src="tabToggle.js"></script>
