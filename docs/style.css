@@ -124,9 +124,15 @@ table {
 }
 
 #glow {
+  display: inline;
+}
+
+#glow:hover {
   text-shadow: 0 0 25px darkorange, 0 0 8px red;
   display: inline;
   color: white;
+  transition: 0.4s;
+  cursor: default;
 }
 
 #dt2,
@@ -185,12 +191,12 @@ ul.breadcrumb li + li:before {
   content: "/\00a0";
 }
 ul.breadcrumb li a {
-  color: #0275d8;
+  color: #2462a8;
   text-decoration: none;
 }
 ul.breadcrumb li a:hover {
-  color: #01447e;
   text-decoration: underline;
+  transition: 0.5s;
 }
 
 video {
