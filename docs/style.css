@@ -1,15 +1,20 @@
 body {
   font-family: "DM Sans";
   font-size: 16px;
-  background-color: white;
-  width: 70%;
-  margin: 50px auto;
+  margin: 0;
 }
 
 img {
   display: block;
   width: 200px;
   margin: auto;
+}
+
+h1 {
+  font-size: 30px;
+  /* color: #e46787; */
+  margin: 0;
+  text-align: center;
 }
 
 h2 {
@@ -23,6 +28,7 @@ h3 {
 h4 {
   color: #2462a8;
   font-weight: bold;
+  /* margin-top: 10px; */
   margin: 10px 0 0 0;
 }
 
@@ -37,11 +43,13 @@ h5 {
 }
 
 b {
+  /* color: #5795db; */
   color: #2462a8;
 }
 
 a {
-  color: #e46787;
+  color: 2462a8;
+  /* color: #e46787; */
   text-decoration: none;
   font-weight: bold;
 }
@@ -51,11 +59,81 @@ li {
   text-indent: -1.28571429em;
 }
 
+table {
+  width: 100%;
+}
+
+/* Division Headers */
+.divHeading {
+  padding: 2%;
+}
+
+#subtitle {
+  font-size: 12px;
+  text-align: center;
+  color: #afb5b6;
+}
+
+/* Pagination Tabs */
+#pagination {
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  right: 0;
+}
+
+.tab {
+  color: #93bbeb;
+  background-color: white;
+  padding: 10px 0;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+}
+
+.tab:hover {
+  transition: 0.3s;
+  /* color: #e46787; */
+  color: black;
+}
+
+.active {
+  background-color: #f5f6fc;
+  /* color: #e46787; */
+  color: black;
+}
+
+.freeze {
+  width: 100%;
+  background-color: white;
+}
+
+/* Tab Information */
+.tabs {
+  background-color: #f5f6fc;
+  overflow-y: scroll;
+  /* height: 90%; */
+  padding: 20px 150px;
+  bottom: 0;
+}
+
+#glow {
+  text-shadow: 0 0 25px orange, 0 0 5px darkorange;
+  display: inline;
+}
+
+#dt2,
+#dt3,
+#dt4 {
+  display: none;
+}
+
 .row {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow-x: scroll;
 }
 
@@ -67,6 +145,7 @@ li {
 .column {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
   margin: 0 10px;
   text-align: center;
