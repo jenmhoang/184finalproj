@@ -206,14 +206,8 @@ Spectrum GlowingBSDF::f(const Vector3D& wo, const Vector3D& wi) {
     if (reflected.x <= 0 || reflected.y <= 0 || reflected.z <= 0) {
         return Spectrum();
     }
-    
-    //using default of 5000K, will change
-    SpectralDistribution blackbody = SpectralDistribution(5000);
-    Spectrum emitted = blackbody.toRGB();
-    //std::cout << emitted.r << ", " << emitted.g << ", " << emitted.b << std::endl;
-    
-    float r = 0.8;
-    return (1.0 - r) * emitted + reflected * r;
+
+    return reflected;
 }
 
 
@@ -287,6 +281,9 @@ Spectrum GlowingBSDF::F_p(const Vector3D& wi) {
     
     return polFres((n * cosWO - air * cosWI) / (n * cosWO + air * cosWI));
 }
+
+
+
 
 
 void BSDF::reflect(const Vector3D& wo, Vector3D* wi) {

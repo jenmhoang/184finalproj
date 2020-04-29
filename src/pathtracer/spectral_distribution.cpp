@@ -62,14 +62,14 @@ namespace CGL {
         for (int i = 0; i < 81; i++) {
             this->rel_distribution[i] = atWavelength(380. + i * 5.);
         }
-//        this->appleRGB = Matrix3x3(2.9515, -1.2894, -0.4738, -1.0851, 1.9908,  0.0372, 0.0854, -0.2694, 1.0912);
     }
     
     float SpectralDistribution::atWavelength(float lambda) {
         //compute I(T,lambda) here (eq. 2.1).
+        double lambda_conv = lambda * 1e-9;
         
-        double a = (2 * h * pow(c, 2)) / pow(lambda, 5);
-        double x = (h * c) / (lambda * k * this->T);
+        double a = (2 * h * pow(c, 2)) / pow(lambda_conv, 5);
+        double x = (h * c) / (lambda_conv * k * this->T);
         double b = 1 / (exp(x) - 1);
         
         return a * b;

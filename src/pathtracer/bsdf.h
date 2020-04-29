@@ -8,6 +8,7 @@
 
 #include "pathtracer/sampler.h"
 #include "util/image.h"
+#include "spectral_distribution.h"
 
 #include <algorithm>
 
@@ -290,6 +291,13 @@ public:
         return 0.5 * (erf(a) - 1.0 + exp(-a * a) / (a * PI));
     }
     
+    Spectrum get_emission() const {
+        SpectralDistribution blackbody = SpectralDistribution(1000);
+        Spectrum emitted = blackbody.toRGB();
+        std::cout << emitted << std::endl;
+        return emitted;
+    }
+    
     double G(const Vector3D& wo, const Vector3D& wi);
     double D(const Vector3D& h);
     Spectrum F(const Vector3D& wi);
@@ -297,7 +305,6 @@ public:
     Spectrum F_p(const Vector3D& wi);
     Spectrum f(const Vector3D& wo, const Vector3D& wi);
     Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-    Spectrum get_emission() const { return Spectrum(); }
     bool is_delta() const { return false; }
 
     private:
