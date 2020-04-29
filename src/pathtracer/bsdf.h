@@ -278,7 +278,7 @@ class EmissionBSDF : public BSDF {
 class GlowingBSDF : public BSDF {
 public:
 
-    GlowingBSDF(const Spectrum& eta, const Spectrum& k, const Spectrum& reflectance, float alpha)
+    GlowingBSDF(const Spectrum& eta, const Spectrum& k, float reflectance, float alpha)
     : eta(eta), k(k), reflectance(reflectance), alpha(alpha) { }
 
     double getTheta(const Vector3D& w) {
@@ -292,10 +292,10 @@ public:
     }
     
     Spectrum get_emission() const {
-        SpectralDistribution blackbody = SpectralDistribution(1000);
+        SpectralDistribution blackbody = SpectralDistribution(5000);
         Spectrum emitted = blackbody.toRGB();
-        std::cout << emitted << std::endl;
-        return emitted;
+        //std::cout << emitted << std::endl;
+        return (1. - reflectance) * emitted;
     }
     
     double G(const Vector3D& wo, const Vector3D& wi);
@@ -310,7 +310,7 @@ public:
     private:
         Spectrum eta, k;
         float alpha;
-        Spectrum reflectance;
+        float reflectance;
         UniformGridSampler2D sampler;
         CosineWeightedHemisphereSampler3D cosineHemisphereSampler;
 }; // class GlowingBSDF
