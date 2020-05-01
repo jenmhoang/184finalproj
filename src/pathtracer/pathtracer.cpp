@@ -122,6 +122,9 @@ PathTracer::estimate_direct_lighting_importance(const Ray &r,
   const Vector3D &w_out = w2o * (-r.d);
   Spectrum L_out;
     
+  //glow output
+  //Spectrum G_out;
+    
     
     for (auto light: scene->lights) {
         
@@ -157,8 +160,17 @@ PathTracer::estimate_direct_lighting_importance(const Ray &r,
                 break;
             }
         }
+        
         L_out += L_temp * (1.0 / nums);
     }
+    
+    //importance sample glowing objects (should we just make mesh lights?)
+//    for (auto obj : scene->objects) {
+//        Spectrum G_temp = obj->get_bsdf()->get_emission();
+//        if (G_temp.norm() > 0) {
+//            G_out += G_temp;
+//        }
+//    }
     
     return L_out;
 }
