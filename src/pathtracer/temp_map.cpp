@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include "temp_map.h"
 
+using std::cout;
+using std::endl;
+
 namespace CGL {
     float ConstTempMap::temp_at(const Vector3D& pos) {
         return t;

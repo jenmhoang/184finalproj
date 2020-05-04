@@ -28,21 +28,21 @@ map<string, XMLElement*> ColladaParser::sources; // URI lookup table
 
 // Parser Helpers //
 
-inline TempMap temp_map_parse(XMLElement* xml) {
+inline TempMap* temp_map_parse(XMLElement* xml) {
     string str = string(xml->GetText());
     stringstream ss (str);
     
     float e1;
     ss >> e1;
     if (ss.rdbuf()->in_avail() == 0) {
-        return ConstTempMap(e1);
+        return new ConstTempMap(e1);
     }
     
     float e2, e3;
     ss >> e2;
     ss >> e3;
     if (ss.rdbuf()->in_avail() == 0) {
-        return NoiseTempMap(e1, e2, e3);
+        return new NoiseTempMap(e1, e2, e3);
     }
     
     float e4, e5, e6, e7, e8;
@@ -54,7 +54,7 @@ inline TempMap temp_map_parse(XMLElement* xml) {
     Vector3D start = Vector3D(e3, e4, e5);
     Vector3D end = Vector3D(e6, e7, e8);
     
-    return GradientTempMap(e1, e2, start, end);
+    return new GradientTempMap(e1, e2, start, end);
 }
 
 inline Spectrum spectrum_from_string ( string spectrum_string ) {
@@ -953,7 +953,7 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
             float alpha = atof(e_alpha->GetText());
             Spectrum eta = spectrum_from_string(string(e_eta->GetText()));
             Spectrum k = spectrum_from_string(string(e_k->GetText()));
-            TempMap temp = temp_map_parse(e_temp);
+            TempMap *temp = temp_map_parse(e_temp);
             
             BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha, temp);
             material.bsdf = bsdf;

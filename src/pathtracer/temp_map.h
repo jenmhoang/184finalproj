@@ -13,11 +13,13 @@
 #include <vector>
 
 using std::vector;
+using std::cout;
+using std::endl;
 
 namespace CGL {
     class TempMap {
         public:
-        virtual float temp_at(const Vector3D& pos) {}
+        virtual float temp_at(const Vector3D& pos) {return 3000;}
     };
 
     class ConstTempMap : public TempMap {
