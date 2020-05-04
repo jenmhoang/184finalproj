@@ -88,7 +88,8 @@ PathTracer::estimate_direct_lighting_hemisphere(const Ray &r,
         
         if (this->bvh->intersect(r, &nIsect)) {
             Spectrum bsdf = isect.bsdf->f(w_out, sample);
-            Spectrum emission = nIsect.bsdf->get_emission();
+            //Spectrum emission = nIsect.bsdf->get_emission(w_out, hit_p);
+            Spectrum emission = zero_bounce_radiance(r, nIsect);
             
             //for each sample, multiply bsdf with emission/radiance with cosine
             L_out += bsdf * emission * sample.z;
@@ -180,9 +181,13 @@ Spectrum PathTracer::zero_bounce_radiance(const Ray &r,
                                           const Intersection &isect) {
   // TODO: Part 3, Task 2
   // Returns the light that results from no bounces of light
-    return isect.bsdf->get_emission();
+    Matrix3x3 o2w;
+    make_coord_space(o2w, isect.n);
+    Matrix3x3 w2o = o2w.T();
 
-  //return Spectrum(1.0);
+    Vector3D hit_p = r.o + r.d * isect.t;
+    Vector3D w_cam = w2o * (-r.d);
+    return isect.bsdf->get_emission(w_cam, hit_p);
 }
 
 Spectrum PathTracer::one_bounce_radiance(const Ray &r,
@@ -190,8 +195,8 @@ Spectrum PathTracer::one_bounce_radiance(const Ray &r,
   // TODO: Part 3, Task 3
   // Returns either the direct illumination by hemisphere or importance sampling
   // depending on `direct_hemisphere_sample`
-    //return estimate_direct_lighting_hemisphere(r, isect);
-    return estimate_direct_lighting_importance(r, isect);
+    return estimate_direct_lighting_hemisphere(r, isect);
+    //return estimate_direct_lighting_importance(r, isect);
   //return Spectrum(1.0);
 }
 

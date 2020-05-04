@@ -18,18 +18,13 @@ namespace CGL {
     class SpectralDistribution {
         public:
             SpectralDistribution(float temp);
-        
-            //may want a destructor?
-            //~SpectralDistribution(){};
-        
             Spectrum toRGB();
             Vector3D toXYZ();
         
         private:
-            int intensity;
+            float intensity;
             float T;
             vector<float> rel_distribution;
-        
             float atWavelength(float lambda);
             Spectrum rgbFromXYZ(Spectrum xyz_color);
     };

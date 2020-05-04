@@ -90,7 +90,7 @@ class BSDF {
    * this would be a zero energy spectrum.
    * \return emission spectrum of the surface material
    */
-  virtual Spectrum get_emission () const = 0;
+  virtual Spectrum get_emission (Vector3D& wi, const Vector3D& pos) = 0;
 
   /**
    * If the BSDF is a delta distribution. Materials that are perfectly specular,
@@ -130,7 +130,7 @@ class DiffuseBSDF : public BSDF {
 
   Spectrum f(const Vector3D& wo, const Vector3D& wi);
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-  Spectrum get_emission() const { return Spectrum(); }
+  Spectrum get_emission(Vector3D& wi, const Vector3D& pos) { return Spectrum(); }
   bool is_delta() const { return false; }
 
 private:
@@ -178,7 +178,7 @@ public:
 
   Spectrum f(const Vector3D& wo, const Vector3D& wi);
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-  Spectrum get_emission() const { return Spectrum(); }
+  Spectrum get_emission(Vector3D& wi, const Vector3D& pos) { return Spectrum(); }
   bool is_delta() const { return false; }
 
 private:
@@ -198,7 +198,7 @@ class MirrorBSDF : public BSDF {
 
   Spectrum f(const Vector3D& wo, const Vector3D& wi);
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-  Spectrum get_emission() const { return Spectrum(); }
+  Spectrum get_emission(Vector3D& wi, const Vector3D& pos) { return Spectrum(); }
   bool is_delta() const { return true; }
 
 private:
@@ -219,7 +219,7 @@ class RefractionBSDF : public BSDF {
 
   Spectrum f(const Vector3D& wo, const Vector3D& wi);
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-  Spectrum get_emission() const { return Spectrum(); }
+  Spectrum get_emission(Vector3D& wi, const Vector3D& pos) { return Spectrum(); }
   bool is_delta() const { return true; }
 
  private:
@@ -243,7 +243,7 @@ class GlassBSDF : public BSDF {
 
   Spectrum f(const Vector3D& wo, const Vector3D& wi);
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-  Spectrum get_emission() const { return Spectrum(); }
+  Spectrum get_emission(Vector3D& wi, const Vector3D& pos) { return Spectrum(); }
   bool is_delta() const { return true; }
 
  private:
@@ -265,7 +265,7 @@ class EmissionBSDF : public BSDF {
 
   Spectrum f(const Vector3D& wo, const Vector3D& wi);
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
-  Spectrum get_emission() const { return radiance; }
+  Spectrum get_emission(Vector3D& wi, const Vector3D& pos) { return radiance; }
   bool is_delta() const { return false; }
 
  private:
@@ -278,8 +278,8 @@ class EmissionBSDF : public BSDF {
 class GlowingBSDF : public BSDF {
 public:
 
-    GlowingBSDF(const Spectrum& eta, const Spectrum& k, float reflectance, float alpha)
-    : eta(eta), k(k), reflectance(reflectance), alpha(alpha) { }
+    GlowingBSDF(const Spectrum& eta, const Spectrum& k, float reflectance, float alpha, int temp)
+    : eta(eta), k(k), reflectance(reflectance), alpha(alpha), temp(temp) { }
 
     double getTheta(const Vector3D& w) {
         return acos(clamp(w.z, -1.0 + 1e-5, 1.0 - 1e-5));
@@ -291,11 +291,20 @@ public:
         return 0.5 * (erf(a) - 1.0 + exp(-a * a) / (a * PI));
     }
     
-    Spectrum get_emission() const {
-        SpectralDistribution blackbody = SpectralDistribution(3000);
+    Spectrum get_emission(Vector3D& wi, const Vector3D& pos) {
+        if (wi.z < 0) {
+            return 0;
+        }
+        
+        SpectralDistribution blackbody = SpectralDistribution(T(pos));
         Spectrum emitted = blackbody.toRGB();
-        //std::cout << emitted << std::endl;
-        return (1. - reflectance) * emitted;
+        
+        //also looks cool with (1. - wi.z)
+        return (1. - reflectance) * wi.z * emitted;
+    }
+    
+    int T(const Vector3D& pos) {
+        return temp;
     }
     
     double G(const Vector3D& wo, const Vector3D& wi);
@@ -306,11 +315,13 @@ public:
     Spectrum f(const Vector3D& wo, const Vector3D& wi);
     Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
     bool is_delta() const { return false; }
+    Spectrum radiance(const Vector3D& wi);
 
     private:
         Spectrum eta, k;
         float alpha;
         float reflectance;
+        int temp;
         UniformGridSampler2D sampler;
         CosineWeightedHemisphereSampler3D cosineHemisphereSampler;
 }; // class GlowingBSDF

@@ -96,7 +96,7 @@ namespace CGL {
             if (RGB[i] <= 0.0031308) {
                 RGB[i] *= 12.92;
             } else {
-                RGB[i] = 1.055 * pow(RGB[i], 1.0/2.4) - 0.055;;
+                RGB[i] = 1.055 * pow(RGB[i], 1.0/2.4) - 0.055;
             }
         }
     }

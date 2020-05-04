@@ -917,18 +917,20 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
             XMLElement* e_alpha = get_element(e_bsdf, "alpha");
             XMLElement* e_eta = get_element(e_bsdf, "eta");
             XMLElement* e_k = get_element(e_bsdf, "k");
+            XMLElement* e_temp = get_element(e_bsdf, "temp");
+            
+            float reflectance = atof(e_reflectance->GetText());
             float alpha = atof(e_alpha->GetText());
             Spectrum eta = spectrum_from_string(string(e_eta->GetText()));
             Spectrum k = spectrum_from_string(string(e_k->GetText()));
-            float reflectance = atof(e_reflectance->GetText());
-            BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha);
+            int temp = atoi(e_temp->GetText());
+            
+            BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha, temp);
             material.bsdf = bsdf;
-            //std::cout << "glow" << std::endl;
         }
         e_bsdf = e_bsdf->NextSiblingElement();
       }
     } else if (tech_common) {
-      //std::cout << "common" << std::endl;
       XMLElement* e_diffuse = get_element(tech_common, "phong/diffuse/color");
       if (e_diffuse) {
         Spectrum reflectance = spectrum_from_string(string(e_diffuse->GetText()));
