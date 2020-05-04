@@ -5,7 +5,6 @@
 //  Created by Ethan Buttimer on 4/22/20.
 //
 
-
 #include "spectral_distribution.h"
 #include "matrix3x3.h"
 

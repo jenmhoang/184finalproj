@@ -923,6 +923,8 @@ void ColladaParser::parse_material ( XMLElement* xml, MaterialInfo& material ) {
             float alpha = atof(e_alpha->GetText());
             Spectrum eta = spectrum_from_string(string(e_eta->GetText()));
             Spectrum k = spectrum_from_string(string(e_k->GetText()));
+            
+            
             int temp = atoi(e_temp->GetText());
             
             BSDF* bsdf = new GlowingBSDF(eta, k, reflectance, alpha, temp);
