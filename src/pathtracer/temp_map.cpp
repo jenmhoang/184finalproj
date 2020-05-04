@@ -9,15 +9,15 @@
 #include "temp_map.h"
 
 namespace CGL {
-    float ConstTempMap::temp_at(Vector3D& pos) {
+    float ConstTempMap::temp_at(const Vector3D& pos) {
         return t;
     }
 
-    float GradientTempMap::temp_at(Vector3D& pos) {
+    float GradientTempMap::temp_at(const Vector3D& pos) {
         return start_t;
     }
 
-    float NoiseTempMap::temp_at(Vector3D &pos) {
+    float NoiseTempMap::temp_at(const Vector3D& pos) {
         return low_t;
     }
 

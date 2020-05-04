@@ -64,6 +64,7 @@ set(APPLICATION_3_2_SOURCE
     src/pathtracer/camera_lens.cpp
     src/pathtracer/raytraced_renderer.cpp
     src/pathtracer/spectral_distribution.cpp
+    src/pathtracer/temp_map.cpp
 
     # misc
     src/util/sphere_drawing.cpp
@@ -122,6 +123,7 @@ set(APPLICATION_HEADERS
     src/pathtracer/raytraced_renderer.h
     src/pathtracer/sampler.h
     src/pathtracer/spectral_distribution.h
+    src/pathtracer/temp_map.h
 
     # misc
     src/util/sphere_drawing.h

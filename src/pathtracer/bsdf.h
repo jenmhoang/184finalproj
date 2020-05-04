@@ -9,6 +9,7 @@
 #include "pathtracer/sampler.h"
 #include "util/image.h"
 #include "spectral_distribution.h"
+#include "temp_map.h"
 
 #include <algorithm>
 
@@ -278,7 +279,7 @@ class EmissionBSDF : public BSDF {
 class GlowingBSDF : public BSDF {
 public:
 
-    GlowingBSDF(const Spectrum& eta, const Spectrum& k, float reflectance, float alpha, int temp)
+    GlowingBSDF(const Spectrum& eta, const Spectrum& k, float reflectance, float alpha, TempMap temp)
     : eta(eta), k(k), reflectance(reflectance), alpha(alpha), temp(temp) { }
 
     double getTheta(const Vector3D& w) {
@@ -303,8 +304,8 @@ public:
         return (1. - reflectance) * wi.z * emitted;
     }
     
-    int T(const Vector3D& pos) {
-        return temp;
+    float T(const Vector3D& pos) {
+        return temp.temp_at(pos);
     }
     
     double G(const Vector3D& wo, const Vector3D& wi);
@@ -321,7 +322,7 @@ public:
         Spectrum eta, k;
         float alpha;
         float reflectance;
-        int temp;
+        TempMap temp;
         UniformGridSampler2D sampler;
         CosineWeightedHemisphereSampler3D cosineHemisphereSampler;
 }; // class GlowingBSDF

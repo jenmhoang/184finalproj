@@ -17,16 +17,13 @@ using std::vector;
 namespace CGL {
     class TempMap {
         public:
-            virtual float temp_at(Vector3D& pos);
-        
-        protected:
-            float t;
+        virtual float temp_at(const Vector3D& pos) {}
     };
 
     class ConstTempMap : public TempMap {
         public:
             ConstTempMap(float t) : t(t) { }
-            virtual float temp_at(Vector3D& pos);
+            float temp_at(const Vector3D& pos);
         
         private:
             float t;
@@ -35,7 +32,7 @@ namespace CGL {
     class GradientTempMap : public TempMap {
         public:
             GradientTempMap(float start_t, float end_t, Vector3D& start_pos, Vector3D& end_pos) : start_t(start_t), end_t(end_t), start_pos(start_pos), end_pos(end_pos) { }
-            virtual float temp_at(Vector3D& pos);
+            float temp_at(const Vector3D& pos);
         
         private:
             float start_t;
@@ -47,7 +44,7 @@ namespace CGL {
     class NoiseTempMap : public TempMap {
         public:
             NoiseTempMap(float low_t, float high_t, float fineness) : low_t(low_t), high_t(high_t), fineness(fineness) { }
-            virtual float temp_at(Vector3D& pos);
+            float temp_at(const Vector3D& pos);
         
         private:
             float low_t;
