@@ -11,6 +11,7 @@
 #include "CGL.h"
 #include "vector3D.h"
 #include <vector>
+#include "perlin_noise.h"
 
 using std::vector;
 using std::cout;
@@ -24,7 +25,7 @@ namespace CGL {
 
     class ConstTempMap : public TempMap {
         public:
-            ConstTempMap(float t) : t(t) { }
+            ConstTempMap(float t) : t(t) {}
             float temp_at(const Vector3D& pos);
         
         private:
@@ -33,7 +34,7 @@ namespace CGL {
 
     class GradientTempMap : public TempMap {
         public:
-            GradientTempMap(float start_t, float end_t, Vector3D& start_pos, Vector3D& end_pos) : start_t(start_t), end_t(end_t), start_pos(start_pos), end_pos(end_pos) { }
+            GradientTempMap(float start_t, float end_t, Vector3D& start_pos, Vector3D& end_pos) : start_t(start_t), end_t(end_t), start_pos(start_pos), end_pos(end_pos) {}
             float temp_at(const Vector3D& pos);
         
         private:
@@ -45,10 +46,13 @@ namespace CGL {
 
     class NoiseTempMap : public TempMap {
         public:
-            NoiseTempMap(float low_t, float high_t, float fineness) : low_t(low_t), high_t(high_t), fineness(fineness) { }
+            NoiseTempMap(float low_t, float high_t, float fineness, unsigned int seed) : low_t(low_t), high_t(high_t), fineness(fineness) {
+                this->pn = PerlinNoise(seed);
+            }
             float temp_at(const Vector3D& pos);
         
         private:
+            PerlinNoise pn;
             float low_t;
             float high_t;
             float fineness;

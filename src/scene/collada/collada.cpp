@@ -38,15 +38,15 @@ inline TempMap* temp_map_parse(XMLElement* xml) {
         return new ConstTempMap(e1);
     }
     
-    float e2, e3;
+    float e2, e3, e4;
     ss >> e2;
     ss >> e3;
+    ss >> e4;
     if (ss.rdbuf()->in_avail() == 0) {
-        return new NoiseTempMap(e1, e2, e3);
+        return new NoiseTempMap(e1, e2, e3, e4);
     }
     
-    float e4, e5, e6, e7, e8;
-    ss >> e4;
+    float e5, e6, e7, e8;
     ss >> e5;
     ss >> e6;
     ss >> e7;
