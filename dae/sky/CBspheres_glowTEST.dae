@@ -82,44 +82,7 @@
         </technique>
       </extra>
     </effect>
-    <effect id="glow-effect-2">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">10</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
-      <extra>
-        <technique profile="CGL">
-          <glowing>
-            <reflectance>0.25</reflectance>
-            <alpha>0.05</alpha>
-            <eta>0.21646 0.42833 1.3284</eta>
-            <k>3.2390 2.4599 1.8661</k>
-            <temp>1000 2000 10 69</temp>
-          </glowing>
-        </technique>
-      </extra>
-    </effect>
-    <effect id="glow-effect-3">
+    <effect id="microfacet-effect">
       <profile_COMMON>
         <technique sid="common">
           <phong>
@@ -146,13 +109,11 @@
       </profile_COMMON>
       <extra>
         <technique profile="CGL">
-          <glowing>
-            <reflectance>0.25</reflectance>
-            <alpha>0.05</alpha>
-            <eta>0.21646 0.42833 1.3284</eta>
-            <k>3.2390 2.4599 1.8661</k>
-            <temp>1000 2000 10 69</temp>
-          </glowing>
+          <microfacet>
+            <alpha>0.25</alpha>
+            <eta>0.059193 0.059881 0.047366</eta>
+            <k>4.1283 3.5892 2.8132</k>
+          </microfacet>
         </technique>
       </extra>
     </effect>
@@ -348,12 +309,6 @@
     <material id="glow-material-1" name="glow1">
       <instance_effect url="#glow-effect-1"/>
     </material>
-    <material id="glow-material-2" name="glow2">
-      <instance_effect url="#glow-effect-2"/>
-    </material>
-    <material id="glow-material-3" name="glow3">
-      <instance_effect url="#glow-effect-3"/>
-    </material>
   </library_materials>
   <library_geometries>
     <geometry id="Sphere1-data" name="Sphere1">
@@ -366,14 +321,6 @@
       </extra>
     </geometry>
     <geometry id="Sphere2-data" name="Sphere2">
-      <extra>
-        <technique profile="CGL">
-          <sphere>
-            <radius>.3</radius>
-          </sphere>
-        </technique>
-      </extra>
-    </geometry><geometry id="Sphere3-data" name="Sphere3">
       <extra>
         <technique profile="CGL">
           <sphere>
@@ -613,20 +560,10 @@
       </node>
       <node id="Sphere2" name="Sphere2" type="NODE">
         <matrix sid="transform">1 0 0 0.4 0 1 0 -0.3 0 0 1 0.3 0 0 0 1</matrix>
-        <instance_geometry url="#Sphere2-data">
+        <instance_geometry url="#Sphere1-data">
           <bind_material>
             <technique_common>
-              <instance_material symbol="glow-material-2" target="#glow-material-2"/>
-            </technique_common>
-          </bind_material>
-        </instance_geometry>
-      </node>
-      <node id="Sphere3" name="Sphere3" type="NODE">
-        <matrix sid="transform">1 0 0 0.4 0 1 0 -0.6 0 0 1 0.3 0 0 0 1</matrix>
-        <instance_geometry url="#Sphere3-data">
-          <bind_material>
-            <technique_common>
-              <instance_material symbol="glow-material-3" target="#glow-material-3"/>
+              <instance_material symbol="lambertian" target="#lambertian"/>
             </technique_common>
           </bind_material>
         </instance_geometry>
