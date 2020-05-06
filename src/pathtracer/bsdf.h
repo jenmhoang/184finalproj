@@ -12,6 +12,7 @@
 #include "temp_map.h"
 
 #include <algorithm>
+#include <map>
 
 namespace CGL {
 
@@ -297,8 +298,23 @@ public:
             return 0;
         }
         
-        SpectralDistribution blackbody = SpectralDistribution(T(pos));
-        Spectrum emitted = blackbody.toRGB();
+        Spectrum emitted;
+        float temperature = T(pos);
+        
+        //using temp->Spectrum cache
+        float round_t = std::round(temperature);
+        auto search = cache.find(round_t);
+        if (search != cache.end()) {
+            emitted = cache[round_t];
+        } else {
+            SpectralDistribution blackbody = SpectralDistribution(temperature);
+            emitted = blackbody.toRGB();
+            cache[round_t] = emitted;
+        }
+        
+        //not using cache
+        //SpectralDistribution blackbody = SpectralDistribution(temperature);
+        //emitted = blackbody.toRGB();
         
         //also looks cool with (1. - wi.z)
         return (1. - reflectance) * wi.z * emitted;
@@ -326,6 +342,7 @@ public:
         TempMap* temp;
         UniformGridSampler2D sampler;
         CosineWeightedHemisphereSampler3D cosineHemisphereSampler;
+        std::map<float, Spectrum> cache;
 }; // class GlowingBSDF
 
 }  // namespace CGL
