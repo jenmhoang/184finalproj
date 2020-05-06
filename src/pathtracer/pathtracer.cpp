@@ -167,8 +167,8 @@ PathTracer::estimate_direct_lighting_importance(const Ray &r,
     
     //importance sample glowing objects (should we just make mesh lights?)
 //    for (auto obj : scene->objects) {
-//        Spectrum G_temp = obj->get_bsdf()->get_emission();
-//        if (G_temp.norm() > 0) {
+//        auto bsdf = obj->get_bsdf();
+//        if (bsdf->temp) {
 //            G_out += G_temp;
 //        }
 //    }

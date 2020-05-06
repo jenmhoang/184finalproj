@@ -217,6 +217,7 @@ class Scene {
 
  private:
   SelectionInfo selectionInfo;
+  //std::vector<SceneObject *> glowing_objects;
   std::vector<SceneObject *> objects;
   std::vector<SceneLight *> lights;
   int selectionIdx, hoverIdx;
