@@ -45,6 +45,102 @@
   </library_cameras>
   <library_images/>
   <library_effects>
+    <effect id="microfacet-smooth-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="CGL">
+          <microfacet>
+            <alpha>0.025</alpha>
+            <eta>1.3352 1.0109 0.68955</eta>
+            <k>7.3398 6.6157 5.6471</k>
+          </microfacet>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="microfacet-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="CGL">
+          <microfacet>
+            <alpha>0.25</alpha>
+            <eta>0.059193 0.059881 0.047366</eta>
+            <k>4.1283 3.5892 2.8132</k>
+          </microfacet>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="ceiling-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.6 0.6 0.6 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">1</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
     <effect id="glow-effect-1">
       <profile_COMMON>
         <technique sid="common">
@@ -81,106 +177,6 @@
           </glowing>
         </technique>
       </extra>
-    </effect>
-    <effect id="glow-effect-2">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">50</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
-      <extra>
-        <technique profile="CGL">
-          <glowing>
-            <reflectance>0.25</reflectance>
-            <alpha>0.05</alpha>
-            <eta>0.21646 0.42833 1.3284</eta>
-            <k>3.2390 2.4599 1.8661</k>
-            <temp>1000 2000 10 69</temp>
-          </glowing>
-        </technique>
-      </extra>
-    </effect>
-    <effect id="glow-effect-3">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.8 0.8 0.8 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">50</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
-      <extra>
-        <technique profile="CGL">
-          <glowing>
-            <reflectance>0.25</reflectance>
-            <alpha>0.05</alpha>
-            <eta>0.21646 0.42833 1.3284</eta>
-            <k>3.2390 2.4599 1.8661</k>
-            <temp>1000 2000 10 69</temp>
-          </glowing>
-        </technique>
-      </extra>
-    </effect>
-    <effect id="ceiling-effect">
-      <profile_COMMON>
-        <technique sid="common">
-          <phong>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.6 0.6 0.6 1</color>
-            </diffuse>
-            <specular>
-              <color sid="specular">0 0 0 1</color>
-            </specular>
-            <shininess>
-              <float sid="shininess">1</float>
-            </shininess>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </phong>
-        </technique>
-      </profile_COMMON>
     </effect>
     <effect id="light-effect">
       <profile_COMMON>
@@ -345,14 +341,9 @@
     <material id="backWall-material" name="backWall">
       <instance_effect url="#backWall-effect"/>
     </material>
+
     <material id="glow-material-1" name="glow1">
       <instance_effect url="#glow-effect-1"/>
-    </material>
-    <material id="glow-material-2" name="glow2">
-      <instance_effect url="#glow-effect-2"/>
-    </material>
-    <material id="glow-material-3" name="glow3">
-      <instance_effect url="#glow-effect-3"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -366,15 +357,6 @@
       </extra>
     </geometry>
     <geometry id="Sphere2-data" name="Sphere2">
-      <extra>
-        <technique profile="CGL">
-          <sphere>
-            <radius>.3</radius>
-          </sphere>
-        </technique>
-      </extra>
-    </geometry>
-    <geometry id="Sphere3-data" name="Sphere2">
       <extra>
         <technique profile="CGL">
           <sphere>
@@ -421,6 +403,49 @@
           <input semantic="VERTEX" source="#ceiling-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#ceiling-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#ceiling-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 </vcount>
+          <p>0 0 0 1 0 1 2 0 2 3 1 3 0 1 4 2 1 5</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="light-mesh" name="light">
+      <mesh>
+        <source id="light-mesh-positions">
+          <float_array id="light-mesh-positions-array" count="12">0.4 1.49 -0.3 0.4 1.49 0.3 -0.4 1.49 0.3 -0.4 1.49 -0.3</float_array>
+          <technique_common>
+            <accessor source="#light-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="light-mesh-normals">
+          <float_array id="light-mesh-normals-array" count="6">0 -1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#light-mesh-normals-array" count="2" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="light-mesh-map-0">
+          <float_array id="light-mesh-map-0-array" count="12">0 1 0 1 0 1 0 1 0 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#light-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="light-mesh-vertices">
+          <input semantic="POSITION" source="#light-mesh-positions"/>
+        </vertices>
+        <polylist material="light-material" count="2">
+          <input semantic="VERTEX" source="#light-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#light-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#light-mesh-map-0" offset="2" set="0"/>
           <vcount>3 3 </vcount>
           <p>0 0 0 1 0 1 2 0 2 3 1 3 0 1 4 2 1 5</p>
         </polylist>
@@ -602,6 +627,10 @@
   <library_controllers/>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
+      <node id="Area" name="Area" type="NODE">
+        <matrix sid="transform">0.6 0 0 0 0 0.8 0 0 0 0 1 1.49 0 0 0 1</matrix>
+        <instance_light url="#Area-light"/>
+      </node>
       <node id="Sphere1" name="Sphere1" type="NODE">
         <matrix sid="transform">1 0 0 -0.4 0 1 0 0.3 0 0 1 0.3 0 0 0 1</matrix>
         <instance_geometry url="#Sphere1-data">
@@ -614,20 +643,10 @@
       </node>
       <node id="Sphere2" name="Sphere2" type="NODE">
         <matrix sid="transform">1 0 0 0.4 0 1 0 -0.3 0 0 1 0.3 0 0 0 1</matrix>
-        <instance_geometry url="#Sphere2-data">
+        <instance_geometry url="#Sphere1-data">
           <bind_material>
             <technique_common>
-              <instance_material symbol="glow-material-2" target="#glow-material-2"/>
-            </technique_common>
-          </bind_material>
-        </instance_geometry>
-      </node>
-      <node id="Sphere3" name="Sphere3" type="NODE">
-        <matrix sid="transform">1 0 0 0.8 0 1 0 -0.6 0 0 1 0.3 0 0 0 1</matrix>
-        <instance_geometry url="#Sphere3-data">
-          <bind_material>
-            <technique_common>
-              <instance_material symbol="glow-material-3" target="#glow-material-3"/>
+              <instance_material symbol="lambertian" target="#lambertian"/>
             </technique_common>
           </bind_material>
         </instance_geometry>
@@ -642,6 +661,16 @@
           <bind_material>
             <technique_common>
               <instance_material symbol="ceiling-material" target="#ceiling-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="light" name="light" type="NODE">
+        <matrix sid="transform">-1 2.69452e-14 1.50996e-7 -2.62268e-8 1.50996e-7 1.62921e-7 1 0.004315853 2.34488e-15 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#light-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="light-material" target="#light-material"/>
             </technique_common>
           </bind_material>
         </instance_geometry>
