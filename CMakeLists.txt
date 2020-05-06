@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(Assignment3)
+project(HeatglowSim)
 
 #-------------------------------------------------------------------------------
 # Build options
@@ -65,6 +65,7 @@ set(APPLICATION_3_2_SOURCE
     src/pathtracer/raytraced_renderer.cpp
     src/pathtracer/spectral_distribution.cpp
     src/pathtracer/temp_map.cpp
+    src/pathtracer/perlin_noise.cpp
 
     # misc
     src/util/sphere_drawing.cpp
@@ -124,6 +125,7 @@ set(APPLICATION_HEADERS
     src/pathtracer/sampler.h
     src/pathtracer/spectral_distribution.h
     src/pathtracer/temp_map.h
+    src/pathtracer/perlin_noise.h
 
     # misc
     src/util/sphere_drawing.h
