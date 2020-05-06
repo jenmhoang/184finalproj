@@ -181,10 +181,10 @@
         <technique profile="CGL">
           <glowing>
             <reflectance>0.25</reflectance>
-            <alpha>0.25</alpha>
+            <alpha>0.05</alpha>
             <eta>0.21646 0.42833 1.3284</eta>
             <k>3.2390 2.4599 1.8661</k>
-            <temp>2000</temp>
+            <temp>1000 2000 10 69</temp>
           </glowing>
         </technique>
       </extra>

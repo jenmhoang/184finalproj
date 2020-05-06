@@ -301,7 +301,7 @@ public:
         Spectrum emitted;
         float temperature = T(pos);
         
-        //using temp->Spectrum cache
+        //using temperature->Spectrum cache
         float round_t = std::round(temperature);
         auto search = cache.find(round_t);
         if (search != cache.end()) {

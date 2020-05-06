@@ -52,6 +52,8 @@ namespace CGL {
     static const double h = 6.62606957e-34; // Planck's constant
     static const double c = 2.99792458e8; // Speed of light
     static const double k = 1.38064852e-23; // Boltzmann constant
+    static const double hc = 1.9864457e-25; // (h * c) precomputed
+    static const double twohcc = 1.1910429e-16; // (2. * h * pow(c, 2.)) precomputed
         
     SpectralDistribution::SpectralDistribution(float temp) {
         this->T = temp;
@@ -67,9 +69,9 @@ namespace CGL {
         //compute I(T,lambda) here (eq. 2.1).
         double lambda_conv = lambda * 1e-9;
         
-        double a = (2 * h * pow(c, 2)) / pow(lambda_conv, 5);
-        double x = (h * c) / (lambda_conv * k * this->T);
-        double b = 1 / (exp(x) - 1);
+        double a = twohcc / pow(lambda_conv, 5.);
+        double x = hc / (lambda_conv * k * this->T);
+        double b = 1. / (exp(x) - 1.);
         
         return a * b;
     }
@@ -84,7 +86,7 @@ namespace CGL {
             XYZ[1] += weight * CIEXYZ_coords[i][1];
             XYZ[2] += weight * CIEXYZ_coords[i][2];
         }
-        
+
         float total_XYZ = XYZ[0] + XYZ[1] + XYZ[2];
         return XYZ/total_XYZ;
     }
@@ -104,6 +106,16 @@ namespace CGL {
         Vector3D XYZ = this->toXYZ();
         Vector3D RGB = xyzToSrgb * XYZ;
         applyGamma(RGB);
+        
+        for (int i = 0; i < 3; i++) {
+            if (RGB[i] > 1.) {
+                RGB[i] = 1.;
+            }
+            if (RGB[i] < 0.) {
+                RGB[i] = 0.;
+            }
+        }
+        
         return Spectrum(RGB);
     }
 }
