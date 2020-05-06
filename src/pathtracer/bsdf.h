@@ -301,7 +301,7 @@ public:
         Spectrum emitted;
         float temperature = T(pos);
         
-        //using temp->Spectrum cache
+        //using temperature->Spectrum cache
         float round_t = std::round(temperature);
         auto search = cache.find(round_t);
         if (search != cache.end()) {
@@ -331,6 +331,8 @@ public:
     Spectrum F(const Vector3D& wi);
     Spectrum F_s(const Vector3D& wi);
     Spectrum F_p(const Vector3D& wi);
+    Spectrum F_s_conduc(const Vector3D& wi);
+    Spectrum F_p_conduc(const Vector3D& wi);
     Spectrum f(const Vector3D& wo, const Vector3D& wi);
     Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
     bool is_delta() const { return false; }

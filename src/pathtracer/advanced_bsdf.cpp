@@ -263,6 +263,7 @@ Spectrum polFres (Spectrum thing) {
     return Vector3D(pow(abs(thing.x), 2.0), pow(abs(thing.y), 2.0), pow(abs(thing.z), 2.0));
 }
 
+
 Spectrum GlowingBSDF::F_s(const Vector3D& wi) {
     Vector3D n = this->eta;
     Vector3D air = Vector3D(1.33, 1.33, 1.33); //other n, assuming air
@@ -282,7 +283,34 @@ Spectrum GlowingBSDF::F_p(const Vector3D& wi) {
     return polFres((n * cosWO - air * cosWI) / (n * cosWO + air * cosWI));
 }
 
+Spectrum GlowingBSDF::F_s_conduc(const Vector3D& wi){
+    Vector3D n = this->eta;
+    Vector3D k = this->k;
+    double cosWI = cos_theta(wi);
+    
+    Spectrum nk2 = (n * n + k * k);
+    double costhet = pow(cosWI, 2.0);
+    Spectrum costheta2 = Spectrum(costhet, costhet, costhet);
+    Spectrum twoncos = (2.0 * n * cosWI);
+    
+    Spectrum RS = (nk2 - twoncos + costheta2 ) / (nk2 + twoncos + costheta2);
+    
+    return RS;
+}
 
+Spectrum GlowingBSDF::F_p_conduc(const Vector3D& wi){
+    Vector3D n = this->eta;
+    Vector3D k = this->k;
+    double cosWI = cos_theta(wi);
+    
+    Spectrum nk2 = (n * n + k * k);
+    double costhet = pow(cosWI, 2.0);
+    Spectrum twoncos = (2.0 * n * cosWI);
+    
+    Spectrum RP = ((nk2 * costhet) - twoncos + Spectrum(1.0, 1.0, 1.0)) / ((nk2 * costhet) + twoncos + Spectrum(1.0, 1.0, 1.0));
+    
+    return RP;
+}
 
 
 
