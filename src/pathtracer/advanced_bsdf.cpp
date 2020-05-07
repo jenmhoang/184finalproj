@@ -243,7 +243,7 @@ Spectrum GlowingBSDF::sample_f(const Vector3D& wo, Vector3D* wi, float* pdf) {
 
 //normal Fresnel, should update
 Spectrum GlowingBSDF::F(const Vector3D& wi) {
-    return (F_s(wi) + F_p(wi))/2;
+    //return (F_s(wi) + F_p(wi))/2;
     Vector3D n = this->eta;
     Vector3D k = this->k;
     double cosWI = cos_theta(wi);
