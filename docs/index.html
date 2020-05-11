@@ -404,7 +404,7 @@
           We start by implementing the glow of perfectly diffuse emissive
           objects for some input temperature. In this case, our object is an
           ideal blackbody that absorbs and re-emits all energy falling upon it.
-          We find the spectral radiance of our blackbody through Planck’s law of
+          We compute the spectral radiance of our blackbody through Planck’s law of
           black-body radiation.
         </p>
         <img style="width: 30%;" src="images/plancksEq.svg" />
@@ -413,6 +413,8 @@
           wavelengths ranging from 380 - 780 nm, roughly the human visual
           spectrum.
         </p>
+
+        <img style="width: 70%;" src="images/distribution.png" />
         <h3>Reflectance</h3>
         <p>
           In order to control the glow attributes and inputs for different
@@ -444,7 +446,7 @@
         <p>
           Additionally, we modified our COLLADA parser, allowing it to read a
           temperature distribution tag that could process either a constant
-          temperature, a linear gradient map, or a Perlin noise map.
+          temperature, a linear gradient map, or a Perlin noise map. The code used to compute the Perlin noise function itself was found <a href="https://github.com/sol-prog/Perlin_Noise">here</a>, based on the <a href="https://mrl.nyu.edu/~perlin/paper445.pdf">original paper</a> by Ken Perlin.
         </p>
         <p>
           For a constant temperature, we apply a uniform temperature
@@ -463,15 +465,76 @@
           temperatures, according to an input noise fineness.
         </p>
 
+        <img style="width: 60%;" src="images/volume_distr.jpg" />
+
+        <h3>Spectrum Caching</h3>
+        <p>In order to improve program efficiency, we implemented a dynamic caching system that stored a map from integer-rounded temperatures to RGB Spectrums, reducing the amount of computation needed for repeated temperature samples.</p>
+
+       <p>No loss in image quality was detectible due to rounded temperature samples, as the bucket size is very small in comparison to the wide range of possible temperatures. Further research could determine the effectiveness of larger and/or adaptive bucket sizes, as greater temperature gaps are required to produce a visual difference in emission as overall temperature increases.</p>
+
+        <p>Using our caching system, slight but consistent improvements in render speed were observed with a variety of models, materials, sampling rates, and temperature distributions.</p>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+           <thead>
+             <tr>
+                <th rowspan = 2>Temperature distribution</th>
+                <th rowspan = 2>Render run time...</th>
+                <th colspan = 3>Sampling rate (samples/pixel)</th>
+             </tr>
+             <tr>
+                <th>1</th>
+                <th>8</th>
+                <th>64</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr>
+               <td rowspan = 3>Constant</td>
+               <td>w/o caching (s)</td>
+               <td>0.593</td>
+               <td>4.737</td>
+               <td>24.760</td>
+             </tr>
+             <tr>
+               <td>w/ caching (s)</td>
+               <td>0.558</td>
+               <td>4.091</td>
+               <td>23.249</td>
+             </tr>
+             <tr>
+               <td>Improvement</td>
+               <td>6%</td>
+               <td>14%</td>
+               <td>6%</td>
+             </tr>
+
+             <tr>
+               <td rowspan = 3>Variable (noise)</td>
+               <td>w/o caching (s)</td>
+               <td>0.693</td>
+               <td>4.609</td>
+               <td>24.625</td>
+             </tr>
+             <tr>
+               <td>w/ caching (s)</td>
+               <td>0.534</td>
+               <td>4.243</td>
+               <td>23.307</td>
+             </tr>
+             <tr>
+               <td>Improvement</td>
+               <td>23%</td>
+               <td>8%</td>
+               <td>5%</td>
+             </tr>
+          </tbody>
+        </table>
+        <figcaption align="middle">
+          All tests performed on a gold CBDragon model with 80% reflectance and alpha = 0.1. No external lighting, max bounces = 6, 480x360 px, 8 render threads.
+        </figcaption>
+
         <hr id="pe" />
         <h2>Problems Encountered</h2>
-        <h3>Spectrum Caching</h3>
-        <p>
-          In order to improve program efficiency, we implemented a dynamic
-          caching system that stored RGB Spectrums mapped to temperature,
-          reducing the amount of computation needed for repeated temperature
-          samples.
-        </p>
         <h3>Lessons Learned</h3>
         <p>---</p>
 
@@ -532,10 +595,12 @@
           <div class="column two">
             <img src="images/noiseBunny.png" />
             <figcaption>Temperature range: 1000-1500K</figcaption>
+            <figcaption>Noise fineness: 5</figcaption>
           </div>
           <div class="column two">
             <img src="images/noiseDragon.png" />
             <figcaption>Temperature range: 1000-3000K</figcaption>
+            <figcaption>Noise fineness: 20</figcaption>
           </div>
         </div>
 
@@ -543,6 +608,14 @@
         <h2>References</h2>
         <hr id="c" />
         <h2>Contributions</h2>
+        <h3>Ethan Buttimer</h3>
+        <ul>
+           <li>Set up GlowingBSDF class and added support to parser</li>
+           <li>Created <i>SpectralDistribution</i> class and implemented color conversion from spectral distribution to CIE XYZ and sRGB <i>Spectrum</i></li>
+           <li>Created the volumetric temperature distribution framework and added support in parser for three types of distributions</li>
+           <li>Integrated Perlin Noise into the renderer through the temperature sampling function of the NoiseTempMap class</li>
+           <li>Implemented and tested Spectrum cache</li>
+         </ul>
       </div>
     </div>
     <script src="tabToggle.js"></script>
