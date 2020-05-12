@@ -49,9 +49,9 @@
         <hr />
         <h2>Problem Description</h2>
         <p>
-          From the experiences that we’ve had applying glow attributes to models
+          From the experiences that we've had applying glow attributes to models
           in 3D programs such as Autodesk Maya (used with Pixar RenderMan),
-          we’ve found that the results fail to take into consideration material
+          we've found that the results fail to take into consideration material
           properties and variations in heat across a surface. Thus, they cannot
           be used to accurately represent objects that emit heat/energy and
           glow.
@@ -66,7 +66,7 @@
         <p>
           Using guidance from a few papers we are reading on, we plan to work
           through this problem by considering blackbody radiation models based
-          on Kirchkoff’s law.
+          on Kirchkoff's law.
         </p>
         <hr />
         <h2>Goals and Deliverables</h2>
@@ -130,7 +130,7 @@
             <td>
               Create glow functionality based on material properties and
               temperature. Implement toggling of shader components: diffuse
-              emission, reflectance, and absorption according to Kirchoff’s Law.
+              emission, reflectance, and absorption according to Kirchoff's Law.
             </td>
           </tr>
           <tr>
@@ -205,7 +205,7 @@
           We start by implementing the glow of perfectly diffuse emissive
           objects for some input temperature. In this case, our object is an
           ideal blackbody that absorbs and re-emits all energy falling upon it.
-          We find the spectral radiance of our blackbody through Planck’s law of
+          We find the spectral radiance of our blackbody through Planck's law of
           black-body radiation.
         </p>
         <img style="width: 30%;" src="images/plancksEq.svg" />
@@ -225,12 +225,12 @@
           temperature varies, we combine our estimate of blackbody radiation
           with the microfacet-model reflectance of the metal. The final sampled
           color is a combination of reflected and emitted light, weighted by the
-          absorbance factor of the material (1 - reflectance). Kirchoff’s Law of
+          absorbance factor of the material (1 - reflectance). Kirchoff's Law of
           Thermal Radiation ensures that the energy of the system is conserved,
           resulting in more realistic renders.
         </p>
         <h5 style="width: 70%; margin: auto;">
-          Kirchoff’s Law:
+          Kirchoff's Law:
           <i
             >At thermal equilibrium, the emissivity and the absorptivity of a
             surface at a given temperature and wavelength are equal</i
@@ -308,7 +308,7 @@
         <h3>Fresnel Terms</h3>
         <p>
           As we plan to take into consideration the effect of polarized light,
-          we’ve split up the Fresnel reflectance coefficient calculations into s
+          we've split up the Fresnel reflectance coefficient calculations into s
           polarization and p polarization.
         </p>
         <div class="row" style="justify-content: space-around;">
@@ -318,8 +318,8 @@
         <hr id="p" />
         <h3>Process</h3>
         <p>
-          So far we’ve modified the aforementioned quantities in a new BSDF
-          class, called GlowingBSDF. We’ve also modified the estimation of
+          So far we've modified the aforementioned quantities in a new BSDF
+          class, called GlowingBSDF. We've also modified the estimation of
           global illumination by replacing the zero-bounce-radiance with the
           blackbody radiation weighted by the absorbance -- this allows us to
           simulate the glowing of the material.
@@ -328,8 +328,8 @@
         <hr id="r2" />
         <h3>Reflection</h3>
         <p>
-          We're slightly behind the progress goals set in the proposal, but
-          we’ve already produced some nice renders with the features implemented
+          We/'re slightly behind the progress goals set in the proposal, but
+          we've already produced some nice renders with the features implemented
           so far. We still have plenty of time to implement the most important
           features that remain.
         </p>
@@ -373,9 +373,9 @@
         <h2>Abstract</h2>
         <h3>The Problem</h3>
         <p>
-          From the experiences that we’ve had applying glow attributes to models
+          From the experiences that we've had applying glow attributes to models
           in 3D programs such as Autodesk Maya (used with Pixar RenderMan),
-          we’ve found that the results fail to take into consideration material
+          we've found that the results fail to take into consideration material
           properties and variations in heat across a surface. Thus, they cannot
           be used to accurately represent objects that emit heat/energy and
           glow.
@@ -406,7 +406,7 @@
           We start by implementing the glow of perfectly diffuse emissive
           objects for some input temperature. In this case, our object is an
           ideal blackbody that absorbs and re-emits all energy falling upon it.
-          We compute the spectral radiance of our blackbody through Planck’s law
+          We compute the spectral radiance of our blackbody through Planck's law
           of black-body radiation.
         </p>
         <img style="width: 30%;" src="images/plancksEq.svg" />
@@ -426,12 +426,12 @@
           realistically render changes in glow color as the temperature and
           metal material of our objects vary. The final sampled color is a
           combination of reflected and emitted light, weighted by the absorbance
-          factor of the material (1 - reflectance). Kirchoff’s Law of Thermal
+          factor of the material (1 - reflectance). Kirchoff's Law of Thermal
           Radiation ensures that the energy of the system is conserved,
           resulting in more realistic renders.
         </p>
         <h5 style="width: 70%; margin: auto;">
-          Kirchoff’s Law:
+          Kirchoff's Law:
           <i
             >At thermal equilibrium, the emissivity and the absorptivity of a
             surface at a given temperature and wavelength are equal</i
@@ -457,7 +457,7 @@
           get_emission function of our GlowingBSDF class to return (emit) a
           radiance based only on the direction of the incoming light ray. This
           allows us to simulate the glowing effect while maintaining the
-          object’s dimensionality.
+          object's dimensionality.
         </p>
         <h3>Volumetric Temperature Maps</h3>
         <p>
@@ -591,13 +591,7 @@
 
         <h3>Raytracing Objects</h3>
         <p>
-          Our first attempt at ray tracing glowing objects didn’t work without
-          lights, as 1) the path tracer was importance sampling the lights, and
-          2) we were adding onto the light bounces to help our object glow.
-        </p>
-        <h3>Raytracing Objects</h3>
-        <p>
-          Our first attempt at ray tracing glowing objects didn’t work without
+          Our first attempt at ray tracing glowing objects didn't work without
           lights, as 1) the path tracer was importance sampling the lights, and
           2) we were adding onto the light bounces to help our object glow.
         </p>
@@ -635,7 +629,7 @@
         <div class="row">
           <div class="column three">
             <img src="images/image1.png" />
-            <figcaption>averaged Fresnel term</figcaption>
+            <figcaption>Averaged Fresnel term</figcaption>
           </div>
           <div class="column three">
             <img src="images/image2.png" />
@@ -760,7 +754,7 @@
         <h3>Jen Hoang</h3>
         <ul>
           <li>
-            Implemented Planck’s equation for computation of the spectral
+            Implemented Planck's equation for computation of the spectral
             distribution for blackbody diffuse objects
           </li>
           <li>
@@ -772,6 +766,17 @@
             renders
           </li>
           <li>Designed and made webpage</li>
+        </ul>
+        <h3>Susan Lin</h3>
+        <ul>
+          <li>
+            Worked on GlowingBSDF functions, especially the Fresnel term in
+            relation to polarization
+          </li>
+          <li>
+            Modified XML file for material data and varying temperature renders
+          </li>
+          <li>Compiled, recorded, and edited videos</li>
         </ul>
       </div>
     </div>
