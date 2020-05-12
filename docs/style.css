@@ -143,15 +143,15 @@ table {
   cursor: default;
 }
 
+#dt1,
 #dt2,
-#dt3,
-#dt4 {
+#dt3 {
   padding: 20px 150px;
   background-color: #f5f6fc;
   display: none;
 }
 
-#dt1 {
+#dt4 {
   padding: 20px 150px;
   background-color: #f5f6fc;
 }
