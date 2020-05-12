@@ -442,6 +442,15 @@
           CIE 1931 XYZ color space, then apply a transformation matrix and gamma
           function to convert to sRGB.
         </p>
+        <h3>Polarization of Light</h3>
+        <p>
+          Experimenting with the polarization of light and how that might enhance our glowing effect, we tested out both dielectric-dielectric and dielectric-conductor Fresnel terms split between both s and p polarization.
+        </p>
+        <h3>Raytracing Glowing Objects</h3>
+        <p>
+          To achieve both direct and global illumination, we altered the get_emission function of our GlowingBSDF class to return (emit) a radiance based only on the direction of the incoming light ray. This allows us to simulate the glowing effect while maintaining the object’s dimensionality.
+        </p>
+
         <h3>Volumetric Temperature Maps</h3>
         <p>
           Additionally, we modified our COLLADA parser, allowing it to read a
@@ -538,6 +547,17 @@
         <p>We were not initially able to reproduce the reddish emission color of objects heated to temperatures less than about 2000K, instead producing a range of strange pink hues. Converting from CIE XYZ to sRGB, we found that the resulting Spectrum sometimes contained a red value greater than 1, and a blue value less than 0. By clamping these values to the range 0 through 1, as required by the Spectrum class, this problem was fixed.</p>
 
         <img style="width: 60%;" src="images/bunnyLowTempError.png">
+
+        <h3>Raytracing Objects</h3>
+        <p>
+          Our first attempt at ray tracing glowing objects didn’t work without lights, as 1) the path tracer was importance sampling the lights, and 2) we were adding onto the light bounces to help our object glow.
+        </p>
+        <p>
+          In our second attempt, we ported in Pathtracer 3-1 code to change the zero bounce radiance to be our blackbody radiation multiplied by the absorbance, as described in the paper.
+        </p>
+        <p>
+          But this only included direct illumination, so we altered our code to cosine hemisphere sample, as well as changing it so that the GlowingBSDF returns a radiance, hence allowing us to experience the full glow.
+        </p>
 
         <h3>Lessons Learned</h3>
         <p>---</p>
