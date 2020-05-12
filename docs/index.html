@@ -162,25 +162,27 @@
 
         <hr />
         <h2>Resources</h2>
-        <li>Our own computers</li>
-        <li>Hive machines</li>
-        <li>Project 3 codebase and renderer</li>
-        <li>
-          <a
-            href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
-            >A Physically Plausible Model for Light Emission from Glowing Solid
-            Objects</a
-          >
-        </li>
-        <li>
-          <a
-            href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.4133&rep=rep1&type=pdf"
-            >Visual Simulation of Heat Shimmering and Mirage</a
-          >
-        </li>
-        <li>
-          Autodesk Maya and/or Blender for creation of example COLLADA files
-        </li>
+        <ul>
+          <li>Our own computers</li>
+          <li>Hive machines</li>
+          <li>Project 3 codebase and renderer</li>
+          <li>
+            <a
+              href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
+              >A Physically Plausible Model for Light Emission from Glowing
+              Solid Objects</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.4133&rep=rep1&type=pdf"
+              >Visual Simulation of Heat Shimmering and Mirage</a
+            >
+          </li>
+          <li>
+            Autodesk Maya and/or Blender for creation of example COLLADA files
+          </li>
+        </ul>
       </div>
       <div id="dt2">
         <button onclick="topFunction()" id="scrollTop" title="Go to top">
@@ -197,8 +199,8 @@
           <li><a href="#ns">Next Steps</a></li>
         </ul>
 
-        <hr />
-        <h3 id="dbe">Diffuse Blackbody Emission</h3>
+        <hr id="dbe" />
+        <h3>Diffuse Blackbody Emission</h3>
         <p>
           We start by implementing the glow of perfectly diffuse emissive
           objects for some input temperature. In this case, our object is an
@@ -216,8 +218,8 @@
           transformation matrix and gamma function to convert to sRGB.
         </p>
 
-        <hr />
-        <h3 id="r">Reflectance</h3>
+        <hr id="r" />
+        <h3>Reflectance</h3>
         <p>
           In order to realistically render gradual changes in glow color as
           temperature varies, we combine our estimate of blackbody radiation
@@ -235,8 +237,8 @@
           >
         </h5>
 
-        <hr />
-        <h3 id="tr">Test Renders</h3>
+        <hr id="tr" />
+        <h3>Test Renders</h3>
         <p>
           We used reflectance data from
           <a
@@ -302,8 +304,8 @@
           </div>
         </div>
 
-        <hr />
-        <h3 id="ft">Fresnel Terms</h3>
+        <hr id="ft" />
+        <h3>Fresnel Terms</h3>
         <p>
           As we plan to take into consideration the effect of polarized light,
           we’ve split up the Fresnel reflectance coefficient calculations into s
@@ -313,8 +315,8 @@
           <img src="images/rpEq.png" /> <img src="images/rsEq.png" />
         </div>
 
-        <hr />
-        <h3 id="p">Process</h3>
+        <hr id="p" />
+        <h3>Process</h3>
         <p>
           So far we’ve modified the aforementioned quantities in a new BSDF
           class, called GlowingBSDF. We’ve also modified the estimation of
@@ -323,8 +325,8 @@
           simulate the glowing of the material.
         </p>
 
-        <hr />
-        <h3 id="r2">Reflection</h3>
+        <hr id="r2" />
+        <h3>Reflection</h3>
         <p>
           We're slightly behind the progress goals set in the proposal, but
           we’ve already produced some nice renders with the features implemented
@@ -332,8 +334,8 @@
           features that remain.
         </p>
 
-        <hr />
-        <h3 id="ns">Next Steps</h3>
+        <hr id="ns" />
+        <h3>Next Steps</h3>
         <p>
           Right now, our renders only demonstrate the direct illumination of the
           glow effect. We will work on tracing multi-bounce paths to achieve
@@ -440,6 +442,21 @@
           CIE 1931 XYZ color space, then apply a transformation matrix and gamma
           function to convert to sRGB.
         </p>
+        <h3>Polarization of Light</h3>
+        <p>
+          Experimenting with the polarization of light and how that might
+          enhance our glowing effect, we tested out both dielectric-dielectric
+          and dielectric-conductor Fresnel terms split between both s and p
+          polarization.
+        </p>
+        <h3>Raytracing Glowing Objects</h3>
+        <p>
+          To achieve both direct and global illumination, we altered the
+          get_emission function of our GlowingBSDF class to return (emit) a
+          radiance based only on the direction of the incoming light ray. This
+          allows us to simulate the glowing effect while maintaining the
+          object’s dimensionality.
+        </p>
         <h3>Volumetric Temperature Maps</h3>
         <p>
           Additionally, we modified our COLLADA parser, allowing it to read a
@@ -472,6 +489,23 @@
           reducing the amount of computation needed for repeated temperature
           samples.
         </p>
+        <h3>Raytracing Objects</h3>
+        <p>
+          Our first attempt at ray tracing glowing objects didn’t work without
+          lights, as 1) the path tracer was importance sampling the lights, and
+          2) we were adding onto the light bounces to help our object glow.
+        </p>
+        <p>
+          In our second attempt, we ported in Pathtracer 3-1 code to change the
+          zero bounce radiance to be our blackbody radiation multiplied by the
+          absorbance, as described in the paper.
+        </p>
+        <p>
+          But this only included direct illumination, so we altered our code to
+          cosine hemisphere sample, as well as changing it so that the
+          GlowingBSDF returns a radiance, hence allowing us to experience the
+          full glow.
+        </p>
         <h3>Lessons Learned</h3>
         <p>---</p>
 
@@ -486,6 +520,21 @@
           Emissive spheres at varying in temperature from 1000K to 20000K (left
           to right)
         </figcaption>
+        <h3>Changing Polarization through the Fresnel Term</h3>
+        <div class="row">
+          <div class="column three">
+            <img src="images/image1.png" />
+            <figcaption>averaged Fresnel term</figcaption>
+          </div>
+          <div class="column three">
+            <img src="images/image2.png" />
+            <figcaption>Fresnel with polarization</figcaption>
+          </div>
+          <div class="column three">
+            <img src="images/image3.png" />
+            <figcaption>Fresnel with p polarization</figcaption>
+          </div>
+        </div>
         <h3>Optical Material Properties</h3>
         <p>
           We used reflectance data from
@@ -524,6 +573,7 @@
             <figcaption>Temperature range: 1000-3000K</figcaption>
           </div>
         </div>
+        <br /><br />
         Perlin Noise map
         <div class="row">
           <div class="column two">
@@ -538,6 +588,40 @@
 
         <hr id="ref" />
         <h2>References</h2>
+        <ul>
+          <li>
+            <a
+              href="https://cgg.mff.cuni.cz/~wilkie/Website/Home_files/egsr_2011_glow.pdf"
+              >A Physically Plausible Model for Light Emission from Glowing
+              Solid Objects
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://seblagarde.wordpress.com/2013/04/29/memo-on-fresnel-equations/"
+              >Fresnel equations</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://libarchive.dartmouth.edu/cdm/ref/collection/dcdis/id/176800"
+              >Temperature dependence of the optical constants of the noble
+              metals.
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://iopscience.iop.org/article/10.1088/0305-4608/6/8/017/pdf"
+              >Temperature dependence of the optical properties of Au, Ag and Cu
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://refractiveindex.info/?shelf=main&book=Au&page=Johnson"
+              >Refractive Index Database</a
+            >
+          </li>
+        </ul>
         <hr id="c" />
         <h2>Contributions</h2>
       </div>

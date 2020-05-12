@@ -62,9 +62,13 @@ a {
   font-weight: bold;
 }
 
-li {
+/* li {
   padding-left: 1.28571429em;
   text-indent: -1.28571429em;
+} */
+
+ul {
+  list-style-position: outside;
 }
 
 table {
