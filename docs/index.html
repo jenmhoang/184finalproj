@@ -587,22 +587,24 @@
 
         <img style="width: 60%;" src="images/bunnyLowTempError.png" />
 
-        <h3>Raytracing Objects</h3>
+        <h3>Ray-tracing Objects</h3>
         <p>
-          Our first attempt at ray tracing glowing objects didn't work without
-          lights, as 1) the path tracer was importance sampling the lights, and
-          2) we were adding onto the light bounces to help our object glow.
+          Our first attempt at ray tracing glowing objects didn’t work without
+          external lighting, as the path tracer was importance sampling only
+          light objects for one-bounce illumination. Also, zero-bounce
+          illumination was only capable of returning a constant radiance from a
+          BSDF, with no dependence on ray direction or intersection position. At
+          this time, we only had access to Project 3-2 code, so we couldn’t
+          directly change these aspects of the path tracer code.
         </p>
         <p>
-          In our second attempt, we ported in Pathtracer 3-1 code to change the
-          zero bounce radiance to be our blackbody radiation multiplied by the
-          absorbance, as described in the paper.
-        </p>
-        <p>
-          But this only included direct illumination, so we altered our code to
-          cosine hemisphere sample, as well as changing it so that the
-          GlowingBSDF returns a radiance, hence allowing us to experience the
-          full glow.
+          In our second attempt, we ported in Project 3-1 code and changed the
+          zero-bounce radiance code and our GlowingBSDF
+          <i>get_emission</i> function to return a direction and position
+          dependent emission. This blackbody emission was multiplied by an
+          average absorbance factor, as described in the paper. We also altered
+          our code to use cosine hemisphere sampling so the glowing objects
+          could produce global illumination.
         </p>
         <h3>Lessons Learned</h3>
         <p>
