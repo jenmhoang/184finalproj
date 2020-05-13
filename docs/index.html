@@ -53,8 +53,7 @@
           in 3D programs such as Autodesk Maya (used with Pixar RenderMan),
           we've found that the results fail to take into consideration material
           properties and variations in heat across a surface. Thus, they cannot
-          be used to accurately represent objects that emit heat/energy and
-          glow.
+          be used to accurately represent objects that emit energy and glow.
         </p>
         <p>
           Through this project, we aim to create functionality for a realistic
@@ -454,10 +453,11 @@
         <h3>Raytracing Glowing Objects</h3>
         <p>
           To achieve both direct and global illumination, we altered the
-          get_emission function of our GlowingBSDF class to return (emit) a
-          radiance based only on the direction of the incoming light ray. This
-          allows us to simulate the glowing effect while maintaining the
-          object's dimensionality.
+          <i>get_emission</i> function of our GlowingBSDF class to return a
+          radiance Spectrum based on the direction of the incoming light ray and
+          the temperature at the point of ray intersection. This allows us to
+          simulate the glowing effect while visually preserving the object’s
+          dimensionality.
         </p>
         <h3>Volumetric Temperature Maps</h3>
         <p>
@@ -497,7 +497,6 @@
           RGB Spectrums, reducing the amount of computation needed for repeated
           temperature samples.
         </p>
-
         <p>
           No loss in image quality was detectible due to rounded temperature
           samples, as the bucket size is very small in comparison to the wide
@@ -506,7 +505,6 @@
           temperature gaps are required to produce a visual difference in
           emission as overall temperature increases.
         </p>
-
         <p>
           Using our caching system, slight but consistent improvements in render
           speed were observed with a variety of models, materials, sampling
@@ -571,7 +569,7 @@
         <figcaption align="middle">
           All tests performed on a gold CBDragon model with 80% reflectance and
           alpha = 0.1. No external lighting, max bounces = 6, 480x360 px, 8
-          render threads.
+          render threads. Each time measurement is the avg. of three trials.
         </figcaption>
 
         <hr id="pe" />
@@ -609,9 +607,21 @@
         <h3>Lessons Learned</h3>
         <p>
           Alongside from overcoming the problems we encountered in the previous
-          section, we learned a lot about the physics behind glowing objects. We
-          also familiarized ourselves with XML files to customize it to use our
-          GlowingBSDF class.
+          section, we learned a lot about the physics behind glowing objects,
+          from blackbody radiation and Kirchoff’s Law to polarization. Going
+          through the project, we strengthened our understanding of how the
+          Project 3 Codebase worked, from following an XML file through the
+          Collada Parser into raytracing and incorporating the BSDF functions.
+        </p>
+        <p>
+          This process also familiarized us with working in a team across Github
+          and XCode -- from fixing small linker issues to modifying the Cmake
+          List and rebuilding when we create new files.
+        </p>
+        <p>
+          It was interesting to go through iterations of our projects --
+          dropping by office hours when we got really stuck and going back to
+          edit the code to work with advice we’d received.
         </p>
 
         <hr id="res" />
